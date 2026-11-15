@@ -5,6 +5,7 @@ import { anunciar, confirmar } from '../a11y.js';
 import { estado, salvarConfig } from '../../dados/repositorio.js';
 import { STATUS, PESOS_STATUS_PADRAO } from '../../logica/constantes.js';
 import { aplicarAparencia, ESCALAS } from '../aparencia.js';
+import { campoLimite } from './revisao.js';
 import {
   exportarTudo, arquivoDoBackup, baixarArquivo, podeCompartilharArquivo, compartilharArquivo,
   lerArquivoBackup, importarBackup, apagarTudo,
@@ -178,7 +179,7 @@ export function render() {
 
   // ---------- Apagar ----------
   const perigo = secao('Apagar dados',
-    h('p', {}, 'Apaga progresso, notas e configurações deste aparelho. Os 84 tópicos do edital voltam ao estado inicial. Faça um backup antes.'),
+    h('p', {}, 'Apaga progresso, notas, resumos, cartões e configurações deste aparelho. Os 84 tópicos do edital voltam ao estado inicial. Faça um backup antes.'),
     h('button', { type: 'button', class: 'botao botao-perigo', onclick: async () => {
       const ok = await confirmar({
         titulo: 'Apagar todos os dados?', texto: 'Esta ação não pode ser desfeita. Exporte um backup antes, se quiser guardar seu progresso.',
@@ -197,5 +198,9 @@ export function render() {
     h('p', {}, 'O app não envia nada pela internet: sem rastreadores, sem fontes externas. Funciona sem conexão depois da primeira abertura.'),
   );
 
-  return h('div', {}, tituloTela('Configurações'), aparencia, teclado, pesos, backup, perigo, sobre);
+  const revisao = secao('Flashcards',
+    campoLimite(),
+    h('p', { class: 'nota' }, 'Cartões novos além do limite ficam para os dias seguintes. Os cartões vencidos sempre entram na fila.'));
+
+  return h('div', {}, tituloTela('Configurações'), aparencia, teclado, pesos, revisao, backup, perigo, sobre);
 }

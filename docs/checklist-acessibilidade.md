@@ -44,3 +44,28 @@ Leitores: **Orca** (Linux, com Firefox ou Chromium), **NVDA** (Windows) ou **Tal
 - [ ] Todos os botões e campos têm pelo menos 44×44 px e não ficam colados.
 - [ ] O app funciona na vertical e na horizontal.
 - [ ] Com TalkBack, deslizar para a direita percorre tudo em ordem lógica.
+
+## Etapa 2 – Resumos
+
+- [ ] No Edital, o link "Resumo de POR-16" abre o editor, e o leitor lê "Resumo – POR-16".
+- [ ] O campo "Texto do resumo (Markdown)" é lido com a ajuda dos atalhos.
+- [ ] Ctrl+B, Ctrl+Shift+8 e Ctrl+Shift+2 formatam, e o leitor anuncia "Negrito aplicado", "Item de lista aplicado" ou "Título aplicado".
+- [ ] Tab sai do editor (não fica preso).
+- [ ] Ctrl+S anuncia "Resumo salvo". Depois de recarregar a página, o texto continua lá.
+- [ ] Na pré-visualização, um ==destaque== é lido como "Destaque: … (fim do destaque)" e aparece com fundo e sublinhado grosso.
+- [ ] "Ver este tópico no Edital" leva o foco ao título do tópico.
+- [ ] A busca anuncia quantos resumos foram encontrados; o trecho achado é lido como "Encontrado: …".
+- [ ] "Criar cartão do trecho selecionado" sem seleção mostra o erro e devolve o foco ao editor.
+
+## Etapa 2 – Flashcards
+
+- [ ] O diálogo "Novo cartão" abre com o foco na Frente (ou no Tópico, se não houver tópico escolhido) e fecha com Esc, devolvendo o foco ao botão.
+- [ ] Erros no diálogo (frente vazia, tópico não escolhido) são lidos e marcam o campo como inválido.
+- [ ] Na sessão, o leitor lê "Frente", as informações do cartão e o texto, sem precisar navegar.
+- [ ] Espaço mostra a resposta; o leitor lê "Resposta", o texto e a explicação.
+- [ ] Cada botão de avaliação é lido com o número, a nota e o intervalo ("3 Bom – volta em 10 minutos").
+- [ ] As teclas 1 a 4 avaliam; o próximo cartão começa lendo o resultado anterior ("Anterior: Bom. Próxima revisão em…").
+- [ ] "Fim da sessão" é lido com o total de revisões e acertos.
+- [ ] A tabela de previsão de 7 dias é lida com cabeçalhos de linha e coluna.
+- [ ] A importação em lote anuncia quantos cartões entraram e lista os erros com o número da linha.
+- [ ] No celular (TalkBack), os quatro botões de avaliação são grandes e fáceis de tocar.

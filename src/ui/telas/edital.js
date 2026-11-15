@@ -3,7 +3,9 @@
 import { h, novoId } from '../dom.js';
 import { barraProgresso, iconeStatus, tituloTela } from '../componentes.js';
 import { anunciar, estaDigitando } from '../a11y.js';
-import { estado, calculadora, cargosDaVisao, progressoDe, salvarProgresso, salvarTopico, salvarConfig } from '../../dados/repositorio.js';
+import { estado, calculadora, cargosDaVisao, progressoDe, salvarProgresso, salvarTopico, salvarConfig, resumosDoTopico, cartoesDoTopico } from '../../dados/repositorio.js';
+import { abrirDialogoCartao } from '../cartao-dialogo.js';
+import { filaAtual } from './revisao.js';
 import { STATUS, STATUS_POR_ID, NOME_CARGO, NOME_CARGO_COMPLETO } from '../../logica/constantes.js';
 import { formatarPct } from '../../logica/progresso.js';
 
@@ -37,7 +39,16 @@ function topicosFiltrados() {
   });
 }
 
-export function render() {
+export function render(param = '') {
+  // #/edital/POR-16: abre o checklist já no tópico (vindo de um resumo, por exemplo).
+  const alvo = param ? estado.topicos.find((t) => t.id === param.toUpperCase()) : null;
+  if (alvo) {
+    recolhidas.delete(alvo.disciplinaId);
+    const cargos = cargosDaVisao();
+    const visivel = alvo.cargos.some((c) => cargos.includes(c));
+    if (!visivel) estado.config.cargoFoco = 'ambos';
+    Object.assign(filtros, { disciplina: 'todas', status: 'todos', busca: '' });
+  }
   const refs = { cartoes: new Map(), barrasDisc: new Map() };
   const topo = h('div', { class: 'cartao' });
   const contagem = h('p', { class: 'contagem-topicos' });
@@ -157,6 +168,10 @@ export function render() {
     h('p', {}, 'Cada tópico existe uma vez só. Tópicos marcados "Ambos os cargos" contam nos dois. Com o foco num tópico, as teclas 0 a 4 definem o status.'),
     formFiltros, topo, contagem, lista);
   redesenhar(false);
+  if (alvo) {
+    const h3 = raiz.querySelector(`#tt-${alvo.id}`);
+    if (h3) { h3.setAttribute('tabindex', '-1'); h3.dataset.focoInicial = 'sim'; }
+  }
   return raiz;
 }
 
@@ -218,7 +233,8 @@ function cartaoTopico(t, refs, aoMudarStatus) {
   selo,
   h('div', { class: 'acoes' },
     h('div', { class: 'campo campo-linha' }, h('label', { for: idSelect }, 'Status', sr(` de ${t.id}`)), select),
-    botaoProx, botaoDet),
+    botaoProx, botaoDet,
+    h('a', { class: 'botao botao-link', href: `#/resumos/topico/${t.id}` }, 'Resumo', sr(` de ${t.id}`), resumosDoTopico(t.id).length ? h('span', { class: 'sr-only' }, ' (já existe)') : '')),
   detalhes);
   return li;
 }
@@ -284,6 +300,18 @@ function camposDetalhes(t) {
       h('label', { for: id('nota') }, 'Nota curta', sr(` sobre ${t.id}`)),
       h('textarea', { id: id('nota'), rows: 3, maxlength: 500, onchange: (e) => salvar({ nota: e.target.value }, 'Nota') }, p.nota ?? '')),
   ];
+
+  // Flashcards do tópico (valem para os dois cargos se o tópico for compartilhado).
+  const infoCartoes = h('p', {});
+  const pintarCartoes = () => {
+    const todos = cartoesDoTopico(t.id).length;
+    const hoje = filaAtual({ cargo: 'ambos', disciplina: '', topico: t.id }).fila.length;
+    infoCartoes.textContent = `${todos} ${todos === 1 ? 'cartão' : 'cartões'} neste tópico; ${hoje} para revisar hoje.`;
+  };
+  pintarCartoes();
+  campos.push(h('h4', {}, 'Flashcards'), infoCartoes, h('div', { class: 'linha-botoes' },
+    h('button', { type: 'button', class: 'botao', onclick: async () => { if (await abrirDialogoCartao({ topicoId: t.id })) pintarCartoes(); } }, 'Novo cartão', sr(` em ${t.id}`)),
+    h('a', { class: 'botao botao-link', href: `#/revisao/cartoes/${t.id}` }, 'Ver cartões', sr(` de ${t.id}`))));
 
   // Legislação: link da versão atualizada da norma ("e suas alterações").
   if ('linkNorma' in t) {

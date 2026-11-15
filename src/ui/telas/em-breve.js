@@ -13,5 +13,3 @@ export function criarTelaEmBreve(nome, etapa, descricao) {
 }
 
 export const cronograma = criarTelaEmBreve('Cronograma', 'Etapa 3', 'Ela vai montar o plano diário e semanal até a prova, com replanejamento automático.');
-export const revisao = criarTelaEmBreve('Revisão', 'Etapa 2', 'Ela vai mostrar a fila de flashcards do dia, com revisão só pelo teclado.');
-export const resumos = criarTelaEmBreve('Resumos', 'Etapa 2', 'Ela vai reunir os resumos em Markdown de cada tópico, com busca.');

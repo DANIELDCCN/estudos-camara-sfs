@@ -14,7 +14,7 @@ db.version(1).stores({
   progresso: 'id', // id = código do tópico; um registro por tópico, independente do cargo
   resumo: 'id, topicoId',
   flashcard: 'id, topicoId, proximaRevisao',
-  revisaoLog: 'id, flashcardId, data',
+  revisaoLog: 'id, flashcardId, data', // intervaloAnterior e intervaloNovo em minutos
   configuracao: 'id',
   cronogramaBloco: 'id, data',
   eventoEdital: 'id, dataInicio',

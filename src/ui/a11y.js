@@ -2,16 +2,23 @@
 import { h } from './dom.js';
 
 // ---------- Avisos (aria-live="polite") ----------
+// Fila: dois avisos seguidos não se apagam; cada um fica pelo menos 1,5 s na região.
 let limpeza;
+let livreEm = 0;
 /** Anuncia uma mensagem ao leitor de tela sem mover o foco. */
 export function anunciar(texto) {
   const regiao = document.getElementById('anunciador');
   if (!regiao) return;
-  // Limpar e escrever em seguida faz o leitor repetir mensagens iguais.
-  regiao.textContent = '';
-  clearTimeout(limpeza);
-  setTimeout(() => { regiao.textContent = texto; }, 50);
-  limpeza = setTimeout(() => { regiao.textContent = ''; }, 8000);
+  const agora = Date.now();
+  const espera = Math.max(0, livreEm - agora);
+  livreEm = agora + espera + 1500;
+  setTimeout(() => {
+    // Limpar e escrever em seguida faz o leitor repetir mensagens iguais.
+    regiao.textContent = '';
+    clearTimeout(limpeza);
+    setTimeout(() => { regiao.textContent = texto; }, 50);
+    limpeza = setTimeout(() => { regiao.textContent = ''; }, 8000);
+  }, espera);
 }
 
 // ---------- Diálogos ----------
@@ -70,6 +77,12 @@ export const LISTA_ATALHOS = [
   ['g e depois r', 'Ir para a Revisão'],
   ['g e depois s', 'Ir para os Resumos'],
   ['g e depois o', 'Ir para as Configurações'],
+  ['Espaço (na sessão de revisão)', 'Mostrar a resposta do cartão'],
+  ['1 a 4 (na sessão, depois da resposta)', 'Avaliar: 1 Errei, 2 Difícil, 3 Bom, 4 Fácil'],
+  ['Ctrl+B (no editor de resumo)', 'Negrito'],
+  ['Ctrl+Shift+8 (no editor)', 'Lista'],
+  ['Ctrl+Shift+2 (no editor)', 'Título'],
+  ['Ctrl+S (no editor)', 'Salvar agora (o salvamento já é automático)'],
   ['0 a 4 (com o foco num tópico)', 'Definir o status: 0 Não iniciado, 1 Teoria estudada, 2 Questões resolvidas, 3 Revisado, 4 Dominado'],
   ['Esc', 'Fechar janelas (diálogos)'],
   ['Tab e Shift+Tab', 'Avançar e voltar entre os controles'],

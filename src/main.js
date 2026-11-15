@@ -13,33 +13,39 @@ import { h } from './ui/dom.js';
 import * as painel from './ui/telas/painel.js';
 import * as edital from './ui/telas/edital.js';
 import * as config from './ui/telas/config.js';
-import { cronograma, revisao, resumos } from './ui/telas/em-breve.js';
+import * as revisao from './ui/telas/revisao.js';
+import * as resumos from './ui/telas/resumos.js';
+import { cronograma } from './ui/telas/em-breve.js';
 
-// Rotas: o endereço fica como .../#/edital (funciona em qualquer hospedagem estática).
+// Rotas: o endereço fica como .../#/edital ou .../#/resumos/topico/POR-16
+// (funciona em qualquer hospedagem estática). O que vem depois da rota é o parâmetro da tela.
 const ROTAS = { painel, edital, cronograma, revisao, resumos, config };
 const TECLA_ROTA = { p: 'painel', e: 'edital', c: 'cronograma', r: 'revisao', s: 'resumos', o: 'config' };
 
 const main = document.getElementById('conteudo');
 
 function rotaAtual() {
-  const m = location.hash.match(/^#\/([a-z]+)/);
-  return m && ROTAS[m[1]] ? m[1] : 'painel';
+  const m = location.hash.match(/^#\/([a-z]+)(?:\/(.*))?$/);
+  return m && ROTAS[m[1]] ? { nome: m[1], param: decodeURIComponent(m[2] ?? '') } : { nome: 'painel', param: '' };
 }
 
 let primeiraTela = true;
 function mostrar() {
   // Âncoras internas (ex.: #conteudo do "Pular para o conteúdo") não trocam de tela.
   if (location.hash && !location.hash.startsWith('#/')) return;
-  const nome = rotaAtual();
+  const { nome, param } = rotaAtual();
   const tela = ROTAS[nome];
-  main.replaceChildren(tela.render());
+  const conteudo = tela.render(param);
+  main.replaceChildren(conteudo);
   document.title = `${tela.titulo} – ${estado.config.nomeApp}`;
   for (const a of document.querySelectorAll('#menu a')) {
     if (a.getAttribute('href') === `#/${nome}`) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');
   }
   // Na troca de tela, o foco vai para o título (h1), e o leitor de tela lê onde você está.
-  if (!primeiraTela) document.getElementById('titulo-tela')?.focus();
+  // Exceções: a tela pede foco num elemento (data-foco-inicial) ou cuida do foco sozinha.
+  const alvo = main.querySelector('[data-foco-inicial]');
+  if (alvo) { alvo.focus(); alvo.scrollIntoView({ block: 'start' }); } else if (!primeiraTela && !conteudo.dataset?.focoProprio) document.getElementById('titulo-tela')?.focus();
   primeiraTela = false;
 }
 

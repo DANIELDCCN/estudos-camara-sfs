@@ -4,6 +4,8 @@ import { db, carimbar } from './db.js';
 import { CONFIG_PADRAO } from '../logica/constantes.js';
 import { criarCalculadora } from '../logica/progresso.js';
 import { hojeISO } from '../logica/datas.js';
+import { agendar, ehNovo } from '../logica/srs.js';
+import { novoIdRegistro } from '../logica/ids.js';
 
 export const estado = {
   config: { ...CONFIG_PADRAO },
@@ -13,6 +15,9 @@ export const estado = {
   topicos: [],
   eventos: [],
   progresso: new Map(),
+  resumos: [],
+  cartoes: [],
+  logs: [],
 };
 
 const ouvintes = new Set();
@@ -21,7 +26,7 @@ export function aoMudar(fn) { ouvintes.add(fn); return () => ouvintes.delete(fn)
 function avisar(o) { for (const fn of ouvintes) fn(o); }
 
 export async function carregar() {
-  const [config, concurso, cargos, disciplinas, topicos, eventos, progresso] = await Promise.all([
+  const [config, concurso, cargos, disciplinas, topicos, eventos, progresso, resumos, cartoes, logs] = await Promise.all([
     db.configuracao.get('principal'),
     db.concurso.toArray(),
     db.cargo.toArray(),
@@ -29,6 +34,9 @@ export async function carregar() {
     db.topico.orderBy('ordem').toArray(),
     db.eventoEdital.orderBy('dataInicio').toArray(),
     db.progresso.toArray(),
+    db.resumo.toArray(),
+    db.flashcard.toArray(),
+    db.revisaoLog.toArray(),
   ]);
   estado.config = { ...CONFIG_PADRAO, ...config, pesosStatus: { ...CONFIG_PADRAO.pesosStatus, ...config?.pesosStatus } };
   estado.concurso = concurso[0] ?? null;
@@ -37,6 +45,9 @@ export async function carregar() {
   estado.topicos = topicos;
   estado.eventos = eventos;
   estado.progresso = new Map(progresso.map((p) => [p.id, p]));
+  estado.resumos = resumos;
+  estado.cartoes = cartoes;
+  estado.logs = logs;
 }
 
 /** Progresso de um tópico (cria um registro vazio se ainda não houver). */
@@ -88,4 +99,89 @@ export function calculadora() {
     progresso: estado.progresso,
     pesosStatus: estado.config.pesosStatus,
   });
+}
+
+export function topicoPorId(id) {
+  return estado.topicos.find((t) => t.id === id);
+}
+
+// ---------- Resumos ----------
+export function resumosDoTopico(topicoId) {
+  return estado.resumos.filter((r) => r.topicoId === topicoId).sort((a, b) => (a.criadoEm ?? '').localeCompare(b.criadoEm ?? ''));
+}
+
+/** Cria (sem id) ou atualiza (com id) um resumo. Devolve o registro gravado. */
+export async function salvarResumo(dados) {
+  const atual = dados.id ? estado.resumos.find((r) => r.id === dados.id) : null;
+  const base = atual ?? { id: novoIdRegistro('resumo') };
+  const novo = carimbar({ ...base, ...dados, id: base.id });
+  await db.resumo.put(novo);
+  if (atual) Object.assign(atual, novo); else estado.resumos.push(novo);
+  avisar({ tipo: 'resumo', id: novo.id });
+  return atual ?? novo;
+}
+
+export async function excluirResumo(id) {
+  await db.resumo.delete(id);
+  estado.resumos = estado.resumos.filter((r) => r.id !== id);
+  avisar({ tipo: 'resumo', id });
+}
+
+// ---------- Flashcards ----------
+export function cartoesDoTopico(topicoId) {
+  return estado.cartoes.filter((c) => c.topicoId === topicoId);
+}
+
+/** Cria (sem id) ou atualiza (com id) um cartão. */
+export async function salvarCartao(dados) {
+  const atual = dados.id ? estado.cartoes.find((c) => c.id === dados.id) : null;
+  const base = atual ?? { id: novoIdRegistro('cartao'), estadoSRS: null, proximaRevisao: null, suspenso: false, explicacao: '' };
+  const novo = carimbar({ ...base, ...dados, id: base.id });
+  await db.flashcard.put(novo);
+  if (atual) Object.assign(atual, novo); else estado.cartoes.push(novo);
+  avisar({ tipo: 'cartao', id: novo.id });
+  return atual ?? novo;
+}
+
+/** Grava vários cartões de uma vez (importação em lote). */
+export async function criarCartoes(lista) {
+  const agora = new Date();
+  // Cada cartão ganha um milissegundo de diferença, para a ordem de criação ser a ordem do arquivo.
+  const novos = lista.map((d, i) => carimbar({
+    id: novoIdRegistro('cartao'), estadoSRS: null, proximaRevisao: null, suspenso: false, explicacao: '', ...d,
+  }, new Date(agora.getTime() + i)));
+  await db.flashcard.bulkPut(novos);
+  estado.cartoes.push(...novos);
+  avisar({ tipo: 'cartao' });
+  return novos;
+}
+
+/** Exclui o cartão e o histórico de revisões dele. */
+export async function excluirCartao(id) {
+  await db.transaction('rw', db.flashcard, db.revisaoLog, async () => {
+    await db.flashcard.delete(id);
+    await db.revisaoLog.where('flashcardId').equals(id).delete();
+  });
+  estado.cartoes = estado.cartoes.filter((c) => c.id !== id);
+  estado.logs = estado.logs.filter((l) => l.flashcardId !== id);
+  avisar({ tipo: 'cartao', id });
+}
+
+/** Registra uma avaliação (1 a 4): calcula a próxima revisão e grava o histórico. */
+export async function avaliarCartao(id, nota, agora = new Date()) {
+  const cartao = estado.cartoes.find((c) => c.id === id);
+  const r = agendar(cartao.estadoSRS, nota, agora);
+  const atualizado = carimbar({ ...cartao, estadoSRS: r.estadoSRS, proximaRevisao: r.proximaRevisao }, agora);
+  const log = carimbar({
+    id: novoIdRegistro('rev'), flashcardId: id, topicoId: cartao.topicoId, data: agora.toISOString(), nota,
+    intervaloAnterior: r.intervaloAnterior, intervaloNovo: r.intervaloNovo, eraNovo: ehNovo(cartao.estadoSRS),
+  }, agora);
+  await db.transaction('rw', db.flashcard, db.revisaoLog, async () => {
+    await db.flashcard.put(atualizado);
+    await db.revisaoLog.put(log);
+  });
+  Object.assign(cartao, atualizado);
+  estado.logs.push(log);
+  avisar({ tipo: 'revisao', id });
+  return { cartao, log };
 }

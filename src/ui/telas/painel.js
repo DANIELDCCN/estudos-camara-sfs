@@ -4,6 +4,7 @@ import { secao, barraProgresso, tituloTela } from '../componentes.js';
 import { estado, calculadora, cargosDaVisao } from '../../dados/repositorio.js';
 import { instante, textoContagem, formatarData, diaDaSemana, formatarHora, proximosEventos, periodo } from '../../logica/datas.js';
 import { NOME_CARGO_COMPLETO } from '../../logica/constantes.js';
+import { filaAtual } from './revisao.js';
 
 export const titulo = 'Painel';
 
@@ -46,9 +47,9 @@ export function render() {
       h('p', { class: 'nota' }, 'Horário oficial de Brasília. O edital avisa que as datas podem mudar.')),
     secao('Próximos prazos', listaEventos),
     secao('Progresso', ...barras, h('p', {}, h('a', { href: '#/edital' }, 'Abrir o checklist do edital'))),
+    secao('Flashcards de hoje', ...blocoCartoes()),
     secao('Estudo de hoje',
-      h('p', {}, 'As tarefas do dia aparecem aqui quando o cronograma automático estiver pronto (Etapa 3).'),
-      h('p', {}, 'Os flashcards para revisar hoje aparecem aqui na Etapa 2.')),
+      h('p', {}, 'As tarefas do dia aparecem aqui quando o cronograma automático estiver pronto (Etapa 3).')),
   );
 
   // Atualiza a contagem a cada minuto, sem anunciar (seria barulho para o leitor de tela).
@@ -60,4 +61,17 @@ export function render() {
   }, 60000);
 
   return tela;
+}
+
+/** Resumo dos flashcards do dia, na visão de cargo atual. */
+function blocoCartoes() {
+  const f = filaAtual({ cargo: null, disciplina: '', topico: '' });
+  const total = f.fila.length;
+  if (!total) {
+    return [h('p', {}, 'Nenhum cartão para revisar agora.'), h('p', {}, h('a', { href: '#/revisao' }, 'Abrir a Revisão'))];
+  }
+  return [
+    h('p', { class: 'destaque-numero' }, `${total} para revisar: ${f.vencidos.length} ${f.vencidos.length === 1 ? 'vencido' : 'vencidos'} e ${f.novos.length} ${f.novos.length === 1 ? 'novo' : 'novos'}.`),
+    h('p', {}, h('a', { href: '#/revisao/sessao', class: 'botao botao-primario' }, 'Começar revisão')),
+  ];
 }
