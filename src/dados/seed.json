@@ -1,0 +1,1889 @@
+{
+  "versaoSeed": 1,
+  "fonte": "Edital nº 001/2026 – Anexos IV e V, conforme o pedido",
+  "concurso": [
+    {
+      "id": "camara-sfs-2026",
+      "nome": "Concurso Público da Câmara Municipal de São Francisco do Sul/SC – Edital nº 001/2026",
+      "banca": "Fundação Universidade Regional de Blumenau (FURB)",
+      "site": "https://concursos.furb.br",
+      "dataProva": "2027-01-24",
+      "observacoes": "Horários oficiais de Brasília. O edital avisa que as datas podem mudar: conferir retificações."
+    }
+  ],
+  "cargo": [
+    {
+      "id": "AA",
+      "nome": "Assistente Administrativo",
+      "nivel": "Médio",
+      "vagas": 4,
+      "cargaHoraria": "30h semanais",
+      "vencimento": 6412.1,
+      "requisito": "Diploma de Ensino Médio",
+      "taxa": 120,
+      "turnoProva": "Vespertino",
+      "horarioProva": {
+        "portoesAbrem": "14:15",
+        "portoesFecham": "15:00",
+        "inicio": "15:15",
+        "fim": "19:15"
+      },
+      "notaMinima": 6,
+      "notaMaxima": 10,
+      "statusInscricao": {
+        "inscrito": null,
+        "isencao": null,
+        "taxaPaga": null,
+        "localProva": ""
+      }
+    },
+    {
+      "id": "TI",
+      "nome": "Analista de Tecnologia da Informação",
+      "nivel": "Superior",
+      "vagas": 1,
+      "cargaHoraria": "30h semanais",
+      "vencimento": 8369.63,
+      "requisito": "Diploma de Ensino Superior reconhecido pelo MEC, em graduação na área de informática",
+      "taxa": 150,
+      "turnoProva": "Matutino",
+      "horarioProva": {
+        "portoesAbrem": "07:15",
+        "portoesFecham": "08:00",
+        "inicio": "08:15",
+        "fim": "12:15"
+      },
+      "notaMinima": 6,
+      "notaMaxima": 11,
+      "statusInscricao": {
+        "inscrito": null,
+        "isencao": null,
+        "taxaPaga": null,
+        "localProva": ""
+      }
+    }
+  ],
+  "disciplina": [
+    {
+      "id": "POR",
+      "nome": "Língua Portuguesa",
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "questoes": 10,
+      "valorQuestao": 0.15,
+      "pesoPorCargo": {
+        "AA": 1.5,
+        "TI": 1.5
+      },
+      "textoOficialEdital": {
+        "AA": "Compreensão, análise e interpretação de textos. Identificação de gêneros textuais e sua função e uso social. Tipos e gêneros textuais. Funções da linguagem. Figuras de linguagem. Coesão textual e os sentidos construídos no texto. Ortografia. Pontuação. Acentuação gráfica. Estrutura e formação de palavras: derivação e composição. Classes gramaticais: substantivo, artigo, adjetivo, pronome, numeral, verbo, advérbio, preposição, conjunção e interjeição. Colocação pronominal. Regência nominal e verbal. Emprego dos tempos verbais. Emprego do acento grave (crase). Concordância nominal e verbal. Análise sintática do período simples e composto. Processos de coordenação e subordinação e seus valores semânticos. Sentido conotativo e denotativo. Sentido dos vocábulos no texto. Significação das palavras no texto: sinônimos, antônimos, hipônimos e hiperônimos. Uso dos porquês.",
+        "TI": "Compreensão, análise e interpretação de textos. Identificação de gêneros textuais e sua função e uso social. Tipos e gêneros textuais. Funções da linguagem. Figuras de linguagem. Coesão textual e os sentidos construídos no texto. Coerência textual. Relações de referenciação, substituição, repetição, conectividade e progressão textual. Ortografia. Pontuação. Acentuação gráfica. Estrutura e formação de palavras: derivação e composição. Classes gramaticais: substantivo, artigo, adjetivo, pronome, numeral, verbo, advérbio, preposição, conjunção e interjeição. Valores morfológicos, sintáticos e semânticos das classes de palavras. Colocação pronominal. Regência nominal e verbal. Emprego dos tempos verbais. Emprego do acento grave (crase). Concordância nominal e verbal. Análise sintática do período simples e composto. Termos da oração. Orações coordenadas e subordinadas. Processos de coordenação e subordinação e seus valores semânticos. Relações sintático-semânticas no período. Sentido conotativo e denotativo. Sentido dos vocábulos no texto. Significação das palavras no texto: sinônimos, antônimos, hipônimos e hiperônimos. Polissemia, ambiguidade e efeitos de sentido. Pressupostos e subentendidos. Relações de sentido estabelecidas por conectivos e operadores argumentativos. Elementos de referenciação e sequenciação textual. Variação linguística e adequação da linguagem às situações de comunicação. Uso dos porquês."
+      },
+      "ordem": 1,
+      "pesoTotal": 1.5
+    },
+    {
+      "id": "RLM",
+      "nome": "Raciocínio Lógico e Matemático",
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "questoes": 5,
+      "valorQuestao": 0.15,
+      "pesoPorCargo": {
+        "AA": 0.75,
+        "TI": 0.75
+      },
+      "textoOficialEdital": {
+        "AA": "Raciocínio lógico envolvendo problemas aritméticos, geométricos. Números inteiros e racionais, nas formas decimal e fracionária: operações de adição, subtração, multiplicação, divisão e potenciação. Números e grandezas proporcionais: razões e proporções; divisão em partes proporcionais; regra de três simples e composta; porcentagem. Princípios de contagem e probabilidade. Operações com conjuntos. Sistema métrico: medidas de tempo, comprimento, área e volume. Sequências e padrões lógicos. Proposições, relações e inferências. Interpretação de gráficos e tabelas. Resolução de situações-problema.",
+        "TI": "Raciocínio lógico envolvendo problemas aritméticos, geométricos. Números inteiros e racionais, nas formas decimal e fracionária: operações de adição, subtração, multiplicação, divisão e potenciação. Números e grandezas proporcionais: razões e proporções; divisão em partes proporcionais; regra de três simples e composta; porcentagem. Princípios de contagem e probabilidade. Operações com conjuntos. Sistema métrico: medidas de tempo, comprimento, área e volume. Sequências e padrões lógicos. Proposições, relações e inferências. Interpretação de gráficos e tabelas. Resolução de situações-problema. [Acréscimos do nível superior, conforme o pedido:] Média aritmética simples e ponderada. […] Equivalências e negações lógicas. Análise combinatória básica. [CONFERIR o trecho omitido \"[…]\" no Anexo V]"
+      },
+      "ordem": 2,
+      "pesoTotal": 0.75
+    },
+    {
+      "id": "LEG",
+      "nome": "Legislação Municipal",
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "questoes": 10,
+      "valorQuestao": 0.15,
+      "pesoPorCargo": {
+        "AA": 1.5,
+        "TI": 1.5
+      },
+      "textoOficialEdital": {
+        "AA": "Lei Orgânica do Município de São Francisco do Sul: organização municipal, competências do Município, Poderes Executivo e Legislativo, atribuições da Câmara Municipal e dos vereadores, fiscalização e controle da Administração Municipal. Estatuto dos Servidores Públicos Municipais (Lei Complementar n.º 8/2003 e suas alterações): provimento e vacância de cargos públicos, direitos, vantagens, licenças, afastamentos, deveres, proibições, responsabilidades e regime disciplinar. Regimento Interno da Câmara Municipal de São Francisco do Sul (Resolução n.º 05/1992 e suas alterações): organização e funcionamento da Câmara, Mesa Diretora, comissões, sessões legislativas, proposições e noções de processo legislativo. Plano de Cargos dos Servidores do Poder Legislativo Municipal (Lei n.º 2.665/2023 e suas alterações): estrutura do quadro de pessoal, cargos e desenvolvimento funcional.",
+        "TI": "Lei Orgânica do Município de São Francisco do Sul: organização político-administrativa, autonomia e competências municipais, organização e atribuições dos Poderes Executivo e Legislativo, competências da Câmara Municipal, fiscalização contábil, financeira e orçamentária, processo legislativo municipal e controle da Administração Pública. Estatuto dos Servidores Públicos Municipais (Lei Complementar n.º 8/2003 e suas alterações): regime jurídico, provimento, vacância, direitos, vantagens, licenças, afastamentos, deveres, proibições, responsabilidades, regime disciplinar e processo administrativo disciplinar. Regimento Interno da Câmara Municipal de São Francisco do Sul (Resolução n.º 05/1992 e suas alterações): organização e funcionamento do Poder Legislativo, Mesa Diretora, comissões parlamentares, sessões, proposições, tramitação, discussão e votação de matérias legislativas, quóruns e procedimentos regimentais. Plano de Cargos dos Servidores do Poder Legislativo Municipal (Lei n.º 2.665/2023 e suas alterações): organização do quadro funcional, provimento de cargos, desenvolvimento funcional e disposições relativas à carreira dos servidores."
+      },
+      "ordem": 3,
+      "pesoTotal": 1.5
+    },
+    {
+      "id": "EAA",
+      "nome": "Conhecimentos Específicos – Assistente Administrativo",
+      "cargos": [
+        "AA"
+      ],
+      "questoes": 25,
+      "valorQuestao": 0.25,
+      "pesoPorCargo": {
+        "AA": 6.25
+      },
+      "textoOficialEdital": {
+        "AA": "[Junção dos subitens do pedido; texto literal do edital: CONFERIR]\nAdministração Pública: Organização administrativa e princípios da Administração Pública. Poderes administrativos, atos administrativos e noções de Direito Administrativo.\nRotinas administrativas e apoio administrativo: Planejamento, organização, execução e controle de atividades. Assessoramento, obtenção e prestação de informações. Apoio às unidades e aos setores administrativos.\nRedação oficial e correspondência oficial: Produção, edição, formatação e conferência de documentos. Tramitação, expedição e controle de documentos físicos e digitais. Comunicação administrativa formal.\nProtocolo e gestão documental: Registro, autuação e classificação de documentos. Arquivamento, conservação e destinação de documentos. Controle da movimentação de documentos.\nProcessos e procedimentos administrativos: Conceito e organização de processos administrativos. Tramitação, procedimentos internos e acompanhamento de demandas. Formalização e registro de atividades administrativas.\nContratos administrativos e licitações: Noções de contratos administrativos e licitações. Compras públicas e procedimentos básicos de aquisição de materiais e serviços. Acompanhamento administrativo de contratações.\nAlmoxarifado, estoques e patrimônio: Controle de entrada e saída de materiais e organização do almoxarifado. Controle de estoques, gestão de bens patrimoniais e inventário. Registro e acompanhamento de materiais e equipamentos.\nOrçamento público, contabilidade e administração financeira: Noções de orçamento público e contabilidade pública. Administração financeira e execução da despesa. Empenho, liquidação e pagamento.\nGestão de pessoas: Rotinas administrativas de pessoal e folha de pagamento. Cadastro funcional e registros administrativos dos servidores. Organização de informações funcionais.\nOrganização, sistemas e métodos: Estruturas organizacionais e departamentalização. Organogramas, fluxogramas, fichários e listagens. Sistemas de informações organizacionais.\nAtendimento ao público: Recepção e orientação de pessoas. Comunicação institucional e encaminhamento de demandas. Prestação de informações ao público interno e externo.\nSistemas informatizados e ferramentas digitais: Sistemas informatizados de gestão, protocolo e processos administrativos. Editores de texto, planilhas eletrônicas, correio eletrônico e agendas digitais. Ferramentas colaborativas e recursos tecnológicos aplicados às rotinas administrativas.\nEquipamentos de áudio e vídeo: Noções de operação, conservação e controle de equipamentos. Cuidados básicos com equipamentos de áudio e vídeo.\nSegurança da informação, sigilo e proteção de dados: Noções de segurança da informação e sigilo funcional. Cuidados com documentos e informações institucionais. Proteção de dados no tratamento de documentos e informações.\nConhecimentos pertinentes à área de atuação: Conteúdo não detalhado no edital [CONFERIR]. Sugestão: usar as atribuições do cargo no Anexo II.\nRelações humanas e ética profissional: Relações interpessoais, comunicação e convivência profissional. Ética no serviço público e responsabilidade no exercício das atividades. Conduta profissional no atendimento e nas rotinas administrativas."
+      },
+      "ordem": 4,
+      "pesoTotal": 6.25
+    },
+    {
+      "id": "ETI",
+      "nome": "Conhecimentos Específicos – Analista de TI",
+      "cargos": [
+        "TI"
+      ],
+      "questoes": 25,
+      "valorQuestao": 0.25,
+      "pesoPorCargo": {
+        "TI": 6.25
+      },
+      "textoOficialEdital": {
+        "TI": "[Junção dos subitens do pedido; texto literal do edital: CONFERIR]\nFundamentos de Tecnologia da Informação: Conceitos fundamentais de TI. Componentes e organização de sistemas computacionais. Relação entre hardware e software e funcionamento geral dos sistemas.\nHardware: Arquitetura de computadores, processadores e memórias (CPU, RAM, ROM). Dispositivos de armazenamento (HD, SSD) e periféricos; placas, fontes e interfaces. Instalação, configuração, diagnóstico e manutenção preventiva e corretiva; identificação de falhas físicas.\nSoftware e sistemas operacionais: Windows e Linux: instalação, configuração e atualização. Gerenciamento de aplicativos, usuários, drivers e licenças de software.\nRedes de computadores: Arquiteturas, topologias e protocolos de comunicação. TCP/IP e suas camadas, endereçamento IP (IPv4 e noções de sub-redes), DNS e DHCP. Redes locais e sem fio (LAN, Wi-Fi), roteadores, switches e cabeamento estruturado. Configuração, administração, monitoramento e diagnóstico de falhas de conectividade.\nAdministração de sistemas e redes: Gerenciamento de usuários, grupos e permissões. Autenticação e controle de acesso. Compartilhamento de recursos (arquivos e impressoras), serviços de rede e suporte local e remoto.\nSegurança da informação: Confidencialidade, integridade e disponibilidade (tríade CID). Gestão de riscos e políticas de segurança. Controle de acesso, firewall e antivírus. Malware (vírus, worms, trojans, ransomware), vulnerabilidades, prevenção e resposta a incidentes.\nBackup e recuperação de dados: Tipos de backup (completo, incremental, diferencial), políticas, rotinas, frequência, retenção e armazenamento. Restauração de dados e testes de restauração, continuidade dos serviços e recuperação de desastres.\nGestão de infraestrutura e serviços de TI: Planejamento, implantação e manutenção de infraestrutura. Inventário de hardware e software e gestão de ativos. Contratos de manutenção, garantias e documentação técnica. Atendimento a usuários, gerenciamento de serviços e suporte técnico. Noções de gerenciamento de serviços de TI e boas práticas de suporte técnico.\nSistemas de informação: Implantação, configuração, atualização e integração de sistemas. Testes e suporte a sistemas administrativos e legislativos.\nBanco de dados: Conceitos e modelos relacionais: tabelas, registros, campos, chaves primárias e estrangeiras, relacionamentos. Consultas SQL e integridade dos dados (integridade referencial). Armazenamento e recuperação de informações.\nAplicativos de escritório: Editores de texto, planilhas eletrônicas (fórmulas e funções) e apresentações. Formulários digitais, correio eletrônico e ferramentas colaborativas.\nGestão documental eletrônica: Digitalização, organização e classificação de documentos. Armazenamento, preservação e recuperação de documentos digitais.\nRecursos audiovisuais e multimídia: Instalação, configuração e operação de equipamentos de áudio e vídeo. Projetores, câmeras, microfones e periféricos; cabos e interfaces.\nTransmissão e gravação de sessões e eventos: Conceitos de streaming e formatos de áudio e vídeo. Conectividade, configuração e suporte técnico para transmissões e gravações.\nContratação de soluções de TI (Lei nº 14.133/2021): Noções de contratação pública de soluções de TI. Contratação de equipamentos, softwares e serviços de tecnologia. Noções dos procedimentos envolvidos na contratação pública.\nLGPD (Lei nº 13.709/2018): Princípios e bases legais para tratamento de dados pessoais. Tratamento de dados pelo Poder Público e direitos dos titulares. Medidas técnicas e administrativas de segurança e controle de acesso. Prevenção e comunicação de incidentes.\nLei de Acesso à Informação (Lei nº 12.527/2011): Transparência pública (ativa e passiva) e direito de acesso à informação. Acesso e proteção de informações institucionais.\nConhecimentos pertinentes à área de atuação: Conteúdo não detalhado no edital [CONFERIR]. Sugestão: usar as atribuições do cargo no Anexo II.\nRelações humanas e ética profissional: Relações interpessoais, comunicação profissional e trabalho em equipe. Atendimento aos usuários, ética no serviço público e responsabilidade profissional. Conduta no ambiente institucional."
+      },
+      "ordem": 5,
+      "pesoTotal": 6.25
+    }
+  ],
+  "topico": [
+    {
+      "id": "POR-01",
+      "disciplinaId": "POR",
+      "titulo": "Compreensão, análise e interpretação de textos",
+      "subitens": [
+        "Identificar o assunto principal e a ideia central.",
+        "Localizar informações explícitas e identificar informações implícitas.",
+        "Reconhecer finalidade, intenção comunicativa e ponto de vista do autor.",
+        "Diferenciar fatos, opiniões, argumentos e exemplos.",
+        "Interpretar palavras e expressões conforme o contexto.",
+        "(TI) Argumentos, opiniões, inferências e conclusões."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 1,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-02",
+      "disciplinaId": "POR",
+      "titulo": "Gêneros e tipos textuais",
+      "subitens": [
+        "Reconhecer gêneros textuais, sua função e seu uso social.",
+        "Diferenciar tipos textuais: narração, descrição, dissertação, exposição e injunção.",
+        "Reconhecer características de textos informativos, argumentativos, instrucionais e administrativos.",
+        "(TI) Diferenças entre gênero textual e tipo textual."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 2,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-03",
+      "disciplinaId": "POR",
+      "titulo": "Funções da linguagem",
+      "subitens": [
+        "Referencial: transmitir informações. Emotiva: expressar sentimentos e opiniões.",
+        "Conativa: influenciar ou orientar o receptor. Fática: estabelecer ou manter a comunicação.",
+        "Metalinguística: usar a linguagem para falar dela própria. Poética: valorizar a construção da mensagem."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 3,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-04",
+      "disciplinaId": "POR",
+      "titulo": "Figuras de linguagem",
+      "subitens": [
+        "Metáfora, comparação, metonímia e personificação.",
+        "Hipérbole, eufemismo, ironia e antítese.",
+        "Identificação dos efeitos de sentido produzidos pelas figuras.",
+        "(TI) Efeitos expressivos e argumentativos."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 4,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-05",
+      "disciplinaId": "POR",
+      "titulo": "Coesão textual",
+      "subitens": [
+        "Elementos que conectam palavras, frases e parágrafos.",
+        "Uso de pronomes, conjunções, advérbios e expressões de ligação.",
+        "Retomada e substituição de termos; relações de causa, consequência, oposição, conclusão e explicação."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 5,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-06",
+      "disciplinaId": "POR",
+      "titulo": "Coerência textual e progressão",
+      "subitens": [
+        "Coerência: organização lógica das ideias.",
+        "Referenciação, substituição, repetição, conectividade e progressão textual."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 6,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-07",
+      "disciplinaId": "POR",
+      "titulo": "Ortografia",
+      "subitens": [
+        "Escrita correta das palavras e regras ortográficas vigentes.",
+        "Emprego de letras e grafias semelhantes, e palavras que geram dúvidas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 7,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-08",
+      "disciplinaId": "POR",
+      "titulo": "Pontuação",
+      "subitens": [
+        "Uso de vírgula, ponto-final, ponto e vírgula e dois-pontos.",
+        "Uso de travessões, parênteses e aspas.",
+        "Separação de termos e orações, e alterações de sentido provocadas pela pontuação."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 8,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-09",
+      "disciplinaId": "POR",
+      "titulo": "Acentuação gráfica",
+      "subitens": [
+        "Regras para oxítonas, paroxítonas, proparoxítonas e monossílabos tônicos.",
+        "Ditongos, hiatos, acentos diferenciais e regras do Acordo Ortográfico."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 9,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-10",
+      "disciplinaId": "POR",
+      "titulo": "Estrutura e formação de palavras",
+      "subitens": [
+        "Radical, prefixo e sufixo.",
+        "Derivação prefixal, sufixal, parassintética, regressiva e imprópria.",
+        "Composição por justaposição e aglutinação."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 10,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-11",
+      "disciplinaId": "POR",
+      "titulo": "Classes gramaticais",
+      "subitens": [
+        "Substantivo: nomeia seres, objetos, lugares e conceitos. Artigo: acompanha e determina o substantivo.",
+        "Adjetivo: caracteriza. Pronome: substitui ou acompanha nomes. Numeral: indica quantidade, ordem, fração ou multiplicação.",
+        "Verbo: expressa ação, estado ou fenômeno. Advérbio: modifica verbo, adjetivo ou outro advérbio.",
+        "Preposição: estabelece relações entre termos. Conjunção: conecta termos ou orações. Interjeição: expressa emoções, reações ou apelos."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 11,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-12",
+      "disciplinaId": "POR",
+      "titulo": "Valores morfológicos, sintáticos e semânticos das classes de palavras",
+      "subitens": [
+        "Valores morfológicos: classificação. Sintáticos: função na oração. Semânticos: sentido no contexto."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 12,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-13",
+      "disciplinaId": "POR",
+      "titulo": "Colocação pronominal",
+      "subitens": [
+        "Próclise: pronome antes do verbo. Ênclise: depois do verbo. Mesóclise: no meio do verbo.",
+        "Regras e situações que determinam a posição dos pronomes oblíquos.",
+        "(TI) Fatores de atração."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 13,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-14",
+      "disciplinaId": "POR",
+      "titulo": "Regência nominal e verbal",
+      "subitens": [
+        "Relação entre nomes e seus complementos, e entre verbos e seus complementos.",
+        "Verbos que exigem preposição, alterações de sentido e emprego correto das preposições.",
+        "(TI) Verbos transitivos e intransitivos."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 14,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-15",
+      "disciplinaId": "POR",
+      "titulo": "Emprego dos tempos verbais",
+      "subitens": [
+        "Presente, pretérito e futuro; modos indicativo, subjuntivo e imperativo.",
+        "Correlação entre tempos verbais e os sentidos que assumem no texto."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 15,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-16",
+      "disciplinaId": "POR",
+      "titulo": "Crase (emprego do acento grave)",
+      "subitens": [
+        "Fusão da preposição \"a\" com o artigo \"a\".",
+        "Casos obrigatórios, proibidos e facultativos; crase em locuções e expressões.",
+        "Uso diante de pronomes, nomes de lugares e palavras masculinas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 16,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-17",
+      "disciplinaId": "POR",
+      "titulo": "Concordância nominal e verbal",
+      "subitens": [
+        "Concordância entre substantivos, adjetivos, artigos e pronomes.",
+        "Concordância do verbo com o sujeito e casos especiais.",
+        "(TI) Expressões que geram dúvidas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 17,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-18",
+      "disciplinaId": "POR",
+      "titulo": "Análise sintática do período simples e composto",
+      "subitens": [
+        "Sujeito, predicado, objeto direto e indireto.",
+        "Complemento nominal, adjunto adnominal e adjunto adverbial.",
+        "Predicativo do sujeito e do objeto, vocativo e aposto.",
+        "Análise de períodos simples e compostos.",
+        "(TI) Termos essenciais, integrantes e acessórios da oração."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 18,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-19",
+      "disciplinaId": "POR",
+      "titulo": "Coordenação e subordinação e seus valores semânticos",
+      "subitens": [
+        "Orações coordenadas e seus tipos.",
+        "Orações subordinadas substantivas, adjetivas e adverbiais.",
+        "Relações de causa, condição, concessão, finalidade, consequência e comparação.",
+        "(TI) Relações sintático-semânticas no período."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 19,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-20",
+      "disciplinaId": "POR",
+      "titulo": "Sentido denotativo e conotativo",
+      "subitens": [
+        "Denotação: sentido literal. Conotação: sentido figurado ou contextual.",
+        "Identificação de expressões com sentido não literal."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 20,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-21",
+      "disciplinaId": "POR",
+      "titulo": "Significação das palavras no texto",
+      "subitens": [
+        "Sinônimos: significados semelhantes. Antônimos: significados contrários.",
+        "Hipônimos: termos mais específicos. Hiperônimos: termos mais abrangentes.",
+        "Identificação do sentido de uma palavra conforme o contexto."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 21,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-22",
+      "disciplinaId": "POR",
+      "titulo": "Polissemia, ambiguidade e efeitos de sentido",
+      "subitens": [],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 22,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-23",
+      "disciplinaId": "POR",
+      "titulo": "Pressupostos e subentendidos",
+      "subitens": [
+        "Informações sugeridas pela construção linguística e informações que dependem do contexto.",
+        "Identificação do que não está declarado diretamente."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 23,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-24",
+      "disciplinaId": "POR",
+      "titulo": "Conectivos e operadores argumentativos",
+      "subitens": [
+        "Relações de causa, consequência, oposição, conclusão, explicação, adição e comparação.",
+        "Efeitos de sentido provocados pela escolha dos conectivos."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 24,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-25",
+      "disciplinaId": "POR",
+      "titulo": "Referenciação e sequenciação textual",
+      "subitens": [
+        "Retomada de informações, pronomes e expressões referenciais.",
+        "Encadeamento de ideias, progressão e continuidade temática."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 25,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-26",
+      "disciplinaId": "POR",
+      "titulo": "Variação linguística",
+      "subitens": [
+        "Diferenças regionais, sociais e históricas da língua.",
+        "Linguagem formal e informal, adequação comunicativa e preconceito linguístico."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 26,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "POR-27",
+      "disciplinaId": "POR",
+      "titulo": "Uso dos porquês",
+      "subitens": [
+        "Por que, porque, por quê e porquê.",
+        "Regras de uso conforme a posição e a função na frase."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 27,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-01",
+      "disciplinaId": "RLM",
+      "titulo": "Problemas aritméticos e geométricos",
+      "subitens": [
+        "Cálculos numéricos aplicados a situações-problema.",
+        "Problemas com medidas, formas e dimensões, e escolha das operações adequadas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 28,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-02",
+      "disciplinaId": "RLM",
+      "titulo": "Números inteiros e racionais",
+      "subitens": [
+        "Números positivos e negativos; frações e números decimais.",
+        "Adição, subtração, multiplicação, divisão e potenciação.",
+        "Conversão entre frações e decimais, e ordem de resolução das operações (expressões numéricas)."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 29,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-03",
+      "disciplinaId": "RLM",
+      "titulo": "Razões e proporções",
+      "subitens": [
+        "Comparação entre grandezas; proporcionalidade direta e inversa.",
+        "Divisão em partes proporcionais."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 30,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-04",
+      "disciplinaId": "RLM",
+      "titulo": "Regra de três simples e composta",
+      "subitens": [
+        "Regra de três direta e inversa.",
+        "Problemas com duas ou mais grandezas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 31,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-05",
+      "disciplinaId": "RLM",
+      "titulo": "Porcentagem",
+      "subitens": [
+        "Cálculo de porcentagens, aumentos, descontos e variações percentuais.",
+        "Aplicação em situações cotidianas, taxas e proporções."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 32,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-06",
+      "disciplinaId": "RLM",
+      "titulo": "Princípios de contagem e probabilidade",
+      "subitens": [
+        "Princípio fundamental da contagem e contagem de possibilidades.",
+        "Espaço amostral, eventos e cálculo de probabilidades."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 33,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-07",
+      "disciplinaId": "RLM",
+      "titulo": "Operações com conjuntos",
+      "subitens": [
+        "Conceito de conjunto e elemento; união, interseção e diferença.",
+        "Pertinência, inclusão e representação por diagramas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 34,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-08",
+      "disciplinaId": "RLM",
+      "titulo": "Sistema métrico",
+      "subitens": [
+        "Medidas de tempo, comprimento, área e volume.",
+        "Conversão entre unidades de medida."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 35,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-09",
+      "disciplinaId": "RLM",
+      "titulo": "Sequências e padrões lógicos",
+      "subitens": [
+        "Padrões numéricos, sequências crescentes e decrescentes.",
+        "Identificação de elementos ausentes e regras de formação."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 36,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-10",
+      "disciplinaId": "RLM",
+      "titulo": "Proposições, relações e inferências",
+      "subitens": [
+        "Identificação de proposições e análise de afirmações.",
+        "Relações lógicas entre informações, e conclusões que decorrem de premissas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 37,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-11",
+      "disciplinaId": "RLM",
+      "titulo": "Interpretação de gráficos e tabelas",
+      "subitens": [
+        "Leitura de tabelas e gráficos de barras, linhas e setores.",
+        "Comparação de valores, tendências e variações, e resolução de problemas."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 38,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-12",
+      "disciplinaId": "RLM",
+      "titulo": "Média aritmética simples e ponderada",
+      "subitens": [
+        "Cálculo da média simples e da média ponderada.",
+        "Identificação dos pesos e aplicação em problemas."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 39,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-13",
+      "disciplinaId": "RLM",
+      "titulo": "Equivalências e negações lógicas",
+      "subitens": [
+        "Negação de proposições.",
+        "Equivalência entre proposições e transformação de sentenças sem alterar o significado lógico."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 40,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-14",
+      "disciplinaId": "RLM",
+      "titulo": "Análise combinatória básica",
+      "subitens": [
+        "Princípio fundamental da contagem.",
+        "Permutações simples, arranjos e combinações em situações básicas."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 41,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "RLM-15",
+      "disciplinaId": "RLM",
+      "titulo": "Resolução de situações-problema",
+      "subitens": [
+        "Interpretação do enunciado, escolha da operação adequada e verificação do resultado.",
+        "Aplicação conjunta dos conteúdos matemáticos."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 42,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "LEG-01",
+      "disciplinaId": "LEG",
+      "titulo": "Lei Orgânica do Município de São Francisco do Sul: organização e Poderes",
+      "subitens": [
+        "Organização do Município e competências municipais.",
+        "Atribuições dos Poderes Executivo e Legislativo.",
+        "Competências da Câmara Municipal e atribuições dos vereadores.",
+        "Fiscalização e controle da Administração Municipal.",
+        "(TI) Organização político-administrativa e autonomia municipal."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 43,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "LEG-02",
+      "disciplinaId": "LEG",
+      "titulo": "Lei Orgânica: fiscalização contábil, financeira e orçamentária, e processo legislativo municipal",
+      "subitens": [
+        "Fiscalização contábil, financeira e orçamentária.",
+        "Processo legislativo municipal e controle da Administração Pública."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 44,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "LEG-03",
+      "disciplinaId": "LEG",
+      "titulo": "Estatuto dos Servidores Públicos Municipais (LC nº 8/2003 e alterações)",
+      "subitens": [
+        "Provimento e vacância de cargos públicos.",
+        "Direitos, vantagens, licenças e afastamentos.",
+        "Deveres, proibições e responsabilidades dos servidores.",
+        "Regime disciplinar.",
+        "(TI) Regime jurídico."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 45,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "LEG-04",
+      "disciplinaId": "LEG",
+      "titulo": "Estatuto (LC nº 8/2003): processo administrativo disciplinar",
+      "subitens": [],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 46,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "LEG-05",
+      "disciplinaId": "LEG",
+      "titulo": "Regimento Interno da Câmara (Resolução nº 05/1992 e alterações)",
+      "subitens": [
+        "Organização e funcionamento da Câmara (do Poder Legislativo).",
+        "Mesa Diretora e comissões (comissões parlamentares).",
+        "Sessões legislativas e proposições.",
+        "Noções de processo legislativo."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 47,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "LEG-06",
+      "disciplinaId": "LEG",
+      "titulo": "Regimento Interno: tramitação, discussão e votação, quóruns e procedimentos regimentais",
+      "subitens": [
+        "Proposições, tramitação, discussão e votação de matérias legislativas.",
+        "Quóruns e procedimentos regimentais."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 48,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "LEG-07",
+      "disciplinaId": "LEG",
+      "titulo": "Plano de Cargos dos Servidores do Poder Legislativo (Lei nº 2.665/2023 e alterações)",
+      "subitens": [
+        "Estrutura do quadro de pessoal (organização do quadro funcional).",
+        "Organização dos cargos e desenvolvimento funcional.",
+        "(TI) Provimento de cargos e disposições relativas à carreira dos servidores."
+      ],
+      "cargos": [
+        "AA",
+        "TI"
+      ],
+      "ordem": 49,
+      "oculto": false,
+      "origem": "seed",
+      "linkNorma": ""
+    },
+    {
+      "id": "EAA-01",
+      "disciplinaId": "EAA",
+      "titulo": "Administração Pública",
+      "subitens": [
+        "Organização administrativa e princípios da Administração Pública.",
+        "Poderes administrativos, atos administrativos e noções de Direito Administrativo."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 50,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-02",
+      "disciplinaId": "EAA",
+      "titulo": "Rotinas administrativas e apoio administrativo",
+      "subitens": [
+        "Planejamento, organização, execução e controle de atividades.",
+        "Assessoramento, obtenção e prestação de informações.",
+        "Apoio às unidades e aos setores administrativos."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 51,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-03",
+      "disciplinaId": "EAA",
+      "titulo": "Redação oficial e correspondência oficial",
+      "subitens": [
+        "Produção, edição, formatação e conferência de documentos.",
+        "Tramitação, expedição e controle de documentos físicos e digitais.",
+        "Comunicação administrativa formal."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 52,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-04",
+      "disciplinaId": "EAA",
+      "titulo": "Protocolo e gestão documental",
+      "subitens": [
+        "Registro, autuação e classificação de documentos.",
+        "Arquivamento, conservação e destinação de documentos.",
+        "Controle da movimentação de documentos."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 53,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-05",
+      "disciplinaId": "EAA",
+      "titulo": "Processos e procedimentos administrativos",
+      "subitens": [
+        "Conceito e organização de processos administrativos.",
+        "Tramitação, procedimentos internos e acompanhamento de demandas.",
+        "Formalização e registro de atividades administrativas."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 54,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-06",
+      "disciplinaId": "EAA",
+      "titulo": "Contratos administrativos e licitações",
+      "subitens": [
+        "Noções de contratos administrativos e licitações.",
+        "Compras públicas e procedimentos básicos de aquisição de materiais e serviços.",
+        "Acompanhamento administrativo de contratações."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 55,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-07",
+      "disciplinaId": "EAA",
+      "titulo": "Almoxarifado, estoques e patrimônio",
+      "subitens": [
+        "Controle de entrada e saída de materiais e organização do almoxarifado.",
+        "Controle de estoques, gestão de bens patrimoniais e inventário.",
+        "Registro e acompanhamento de materiais e equipamentos."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 56,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-08",
+      "disciplinaId": "EAA",
+      "titulo": "Orçamento público, contabilidade e administração financeira",
+      "subitens": [
+        "Noções de orçamento público e contabilidade pública.",
+        "Administração financeira e execução da despesa.",
+        "Empenho, liquidação e pagamento."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 57,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-09",
+      "disciplinaId": "EAA",
+      "titulo": "Gestão de pessoas",
+      "subitens": [
+        "Rotinas administrativas de pessoal e folha de pagamento.",
+        "Cadastro funcional e registros administrativos dos servidores.",
+        "Organização de informações funcionais."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 58,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-10",
+      "disciplinaId": "EAA",
+      "titulo": "Organização, sistemas e métodos",
+      "subitens": [
+        "Estruturas organizacionais e departamentalização.",
+        "Organogramas, fluxogramas, fichários e listagens.",
+        "Sistemas de informações organizacionais."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 59,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-11",
+      "disciplinaId": "EAA",
+      "titulo": "Atendimento ao público",
+      "subitens": [
+        "Recepção e orientação de pessoas.",
+        "Comunicação institucional e encaminhamento de demandas.",
+        "Prestação de informações ao público interno e externo."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 60,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-12",
+      "disciplinaId": "EAA",
+      "titulo": "Sistemas informatizados e ferramentas digitais",
+      "subitens": [
+        "Sistemas informatizados de gestão, protocolo e processos administrativos.",
+        "Editores de texto, planilhas eletrônicas, correio eletrônico e agendas digitais.",
+        "Ferramentas colaborativas e recursos tecnológicos aplicados às rotinas administrativas."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 61,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-13",
+      "disciplinaId": "EAA",
+      "titulo": "Equipamentos de áudio e vídeo",
+      "subitens": [
+        "Noções de operação, conservação e controle de equipamentos.",
+        "Cuidados básicos com equipamentos de áudio e vídeo."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 62,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-14",
+      "disciplinaId": "EAA",
+      "titulo": "Segurança da informação, sigilo e proteção de dados",
+      "subitens": [
+        "Noções de segurança da informação e sigilo funcional.",
+        "Cuidados com documentos e informações institucionais.",
+        "Proteção de dados no tratamento de documentos e informações."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 63,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-15",
+      "disciplinaId": "EAA",
+      "titulo": "Conhecimentos pertinentes à área de atuação",
+      "subitens": [
+        "Conteúdo não detalhado no edital [CONFERIR]. Sugestão: usar as atribuições do cargo no Anexo II."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 64,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "EAA-16",
+      "disciplinaId": "EAA",
+      "titulo": "Relações humanas e ética profissional",
+      "subitens": [
+        "Relações interpessoais, comunicação e convivência profissional.",
+        "Ética no serviço público e responsabilidade no exercício das atividades.",
+        "Conduta profissional no atendimento e nas rotinas administrativas."
+      ],
+      "cargos": [
+        "AA"
+      ],
+      "ordem": 65,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-01",
+      "disciplinaId": "ETI",
+      "titulo": "Fundamentos de Tecnologia da Informação",
+      "subitens": [
+        "Conceitos fundamentais de TI.",
+        "Componentes e organização de sistemas computacionais.",
+        "Relação entre hardware e software e funcionamento geral dos sistemas."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 66,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-02",
+      "disciplinaId": "ETI",
+      "titulo": "Hardware",
+      "subitens": [
+        "Arquitetura de computadores, processadores e memórias (CPU, RAM, ROM).",
+        "Dispositivos de armazenamento (HD, SSD) e periféricos; placas, fontes e interfaces.",
+        "Instalação, configuração, diagnóstico e manutenção preventiva e corretiva; identificação de falhas físicas."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 67,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-03",
+      "disciplinaId": "ETI",
+      "titulo": "Software e sistemas operacionais",
+      "subitens": [
+        "Windows e Linux: instalação, configuração e atualização.",
+        "Gerenciamento de aplicativos, usuários, drivers e licenças de software."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 68,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-04",
+      "disciplinaId": "ETI",
+      "titulo": "Redes de computadores",
+      "subitens": [
+        "Arquiteturas, topologias e protocolos de comunicação.",
+        "TCP/IP e suas camadas, endereçamento IP (IPv4 e noções de sub-redes), DNS e DHCP.",
+        "Redes locais e sem fio (LAN, Wi-Fi), roteadores, switches e cabeamento estruturado.",
+        "Configuração, administração, monitoramento e diagnóstico de falhas de conectividade."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 69,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-05",
+      "disciplinaId": "ETI",
+      "titulo": "Administração de sistemas e redes",
+      "subitens": [
+        "Gerenciamento de usuários, grupos e permissões.",
+        "Autenticação e controle de acesso.",
+        "Compartilhamento de recursos (arquivos e impressoras), serviços de rede e suporte local e remoto."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 70,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-06",
+      "disciplinaId": "ETI",
+      "titulo": "Segurança da informação",
+      "subitens": [
+        "Confidencialidade, integridade e disponibilidade (tríade CID).",
+        "Gestão de riscos e políticas de segurança.",
+        "Controle de acesso, firewall e antivírus.",
+        "Malware (vírus, worms, trojans, ransomware), vulnerabilidades, prevenção e resposta a incidentes."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 71,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-07",
+      "disciplinaId": "ETI",
+      "titulo": "Backup e recuperação de dados",
+      "subitens": [
+        "Tipos de backup (completo, incremental, diferencial), políticas, rotinas, frequência, retenção e armazenamento.",
+        "Restauração de dados e testes de restauração, continuidade dos serviços e recuperação de desastres."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 72,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-08",
+      "disciplinaId": "ETI",
+      "titulo": "Gestão de infraestrutura e serviços de TI",
+      "subitens": [
+        "Planejamento, implantação e manutenção de infraestrutura.",
+        "Inventário de hardware e software e gestão de ativos.",
+        "Contratos de manutenção, garantias e documentação técnica.",
+        "Atendimento a usuários, gerenciamento de serviços e suporte técnico.",
+        "Noções de gerenciamento de serviços de TI e boas práticas de suporte técnico."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 73,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-09",
+      "disciplinaId": "ETI",
+      "titulo": "Sistemas de informação",
+      "subitens": [
+        "Implantação, configuração, atualização e integração de sistemas.",
+        "Testes e suporte a sistemas administrativos e legislativos."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 74,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-10",
+      "disciplinaId": "ETI",
+      "titulo": "Banco de dados",
+      "subitens": [
+        "Conceitos e modelos relacionais: tabelas, registros, campos, chaves primárias e estrangeiras, relacionamentos.",
+        "Consultas SQL e integridade dos dados (integridade referencial).",
+        "Armazenamento e recuperação de informações."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 75,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-11",
+      "disciplinaId": "ETI",
+      "titulo": "Aplicativos de escritório",
+      "subitens": [
+        "Editores de texto, planilhas eletrônicas (fórmulas e funções) e apresentações.",
+        "Formulários digitais, correio eletrônico e ferramentas colaborativas."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 76,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-12",
+      "disciplinaId": "ETI",
+      "titulo": "Gestão documental eletrônica",
+      "subitens": [
+        "Digitalização, organização e classificação de documentos.",
+        "Armazenamento, preservação e recuperação de documentos digitais."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 77,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-13",
+      "disciplinaId": "ETI",
+      "titulo": "Recursos audiovisuais e multimídia",
+      "subitens": [
+        "Instalação, configuração e operação de equipamentos de áudio e vídeo.",
+        "Projetores, câmeras, microfones e periféricos; cabos e interfaces."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 78,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-14",
+      "disciplinaId": "ETI",
+      "titulo": "Transmissão e gravação de sessões e eventos",
+      "subitens": [
+        "Conceitos de streaming e formatos de áudio e vídeo.",
+        "Conectividade, configuração e suporte técnico para transmissões e gravações."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 79,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-15",
+      "disciplinaId": "ETI",
+      "titulo": "Contratação de soluções de TI (Lei nº 14.133/2021)",
+      "subitens": [
+        "Noções de contratação pública de soluções de TI.",
+        "Contratação de equipamentos, softwares e serviços de tecnologia.",
+        "Noções dos procedimentos envolvidos na contratação pública."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 80,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-16",
+      "disciplinaId": "ETI",
+      "titulo": "LGPD (Lei nº 13.709/2018)",
+      "subitens": [
+        "Princípios e bases legais para tratamento de dados pessoais.",
+        "Tratamento de dados pelo Poder Público e direitos dos titulares.",
+        "Medidas técnicas e administrativas de segurança e controle de acesso.",
+        "Prevenção e comunicação de incidentes."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 81,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-17",
+      "disciplinaId": "ETI",
+      "titulo": "Lei de Acesso à Informação (Lei nº 12.527/2011)",
+      "subitens": [
+        "Transparência pública (ativa e passiva) e direito de acesso à informação.",
+        "Acesso e proteção de informações institucionais."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 82,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-18",
+      "disciplinaId": "ETI",
+      "titulo": "Conhecimentos pertinentes à área de atuação",
+      "subitens": [
+        "Conteúdo não detalhado no edital [CONFERIR]. Sugestão: usar as atribuições do cargo no Anexo II."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 83,
+      "oculto": false,
+      "origem": "seed"
+    },
+    {
+      "id": "ETI-19",
+      "disciplinaId": "ETI",
+      "titulo": "Relações humanas e ética profissional",
+      "subitens": [
+        "Relações interpessoais, comunicação profissional e trabalho em equipe.",
+        "Atendimento aos usuários, ética no serviço público e responsabilidade profissional.",
+        "Conduta no ambiente institucional."
+      ],
+      "cargos": [
+        "TI"
+      ],
+      "ordem": 84,
+      "oculto": false,
+      "origem": "seed"
+    }
+  ],
+  "eventoEdital": [
+    {
+      "id": "ev01",
+      "titulo": "Publicação do Edital",
+      "dataInicio": "2026-10-28",
+      "dataFim": "2026-10-28",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev02",
+      "titulo": "Impugnação do Edital",
+      "dataInicio": "2026-10-29",
+      "dataFim": "2026-10-30",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev03",
+      "titulo": "Respostas às impugnações",
+      "dataInicio": "2026-11-05",
+      "dataFim": "2026-11-05",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev04",
+      "titulo": "Inscrições (8h do dia 06/11 até 23h59 do dia 07/12)",
+      "dataInicio": "2026-11-06",
+      "dataFim": "2026-12-07",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false,
+      "destaque": true,
+      "horaInicio": "08:00",
+      "horaFim": "23:59"
+    },
+    {
+      "id": "ev05",
+      "titulo": "Pedido de reserva de vaga PcD",
+      "dataInicio": "2026-11-06",
+      "dataFim": "2026-12-07",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev06",
+      "titulo": "Pedido de condições especiais para a prova",
+      "dataInicio": "2026-11-06",
+      "dataFim": "2026-12-07",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev07",
+      "titulo": "Pedido de isenção da taxa",
+      "dataInicio": "2026-11-06",
+      "dataFim": "2026-11-10",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false,
+      "destaque": true
+    },
+    {
+      "id": "ev08",
+      "titulo": "Resultado dos pedidos de isenção",
+      "dataInicio": "2026-11-23",
+      "dataFim": "2026-11-23",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev09",
+      "titulo": "Recursos contra isenção negada",
+      "dataInicio": "2026-11-24",
+      "dataFim": "2026-11-25",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev10",
+      "titulo": "Respostas aos recursos de isenção",
+      "dataInicio": "2026-11-30",
+      "dataFim": "2026-11-30",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev11",
+      "titulo": "Último dia para pagar a taxa",
+      "dataInicio": "2026-12-08",
+      "dataFim": "2026-12-08",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false,
+      "destaque": true
+    },
+    {
+      "id": "ev12",
+      "titulo": "Inscrições deferidas, resultado de PcD e de condições especiais",
+      "dataInicio": "2026-12-10",
+      "dataFim": "2026-12-10",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev13",
+      "titulo": "Recursos contra indeferimentos (inscrição, PcD, condições especiais)",
+      "dataInicio": "2026-12-11",
+      "dataFim": "2026-12-12",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev14",
+      "titulo": "Respostas a esses recursos",
+      "dataInicio": "2026-12-16",
+      "dataFim": "2026-12-16",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev15",
+      "titulo": "Homologação das inscrições",
+      "dataInicio": "2026-12-17",
+      "dataFim": "2026-12-17",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev16",
+      "titulo": "Locais e salas da prova objetiva",
+      "dataInicio": "2027-01-13",
+      "dataFim": "2027-01-13",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev17",
+      "titulo": "Envio da Prova de Títulos (só Analista de TI)",
+      "dataInicio": "2027-01-13",
+      "dataFim": "2027-01-22",
+      "relevantePara": [
+        "TI"
+      ],
+      "concluido": false,
+      "destaque": true,
+      "horaInicio": "08:00",
+      "horaFim": "23:59"
+    },
+    {
+      "id": "ev18",
+      "titulo": "PROVA OBJETIVA",
+      "dataInicio": "2027-01-24",
+      "dataFim": "2027-01-24",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false,
+      "destaque": true,
+      "prova": true
+    },
+    {
+      "id": "ev19",
+      "titulo": "Gabarito preliminar e cadernos de prova",
+      "dataInicio": "2027-01-25",
+      "dataFim": "2027-01-25",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev20",
+      "titulo": "Recursos contra o gabarito",
+      "dataInicio": "2027-01-26",
+      "dataFim": "2027-01-27",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev21",
+      "titulo": "Respostas aos recursos, resultado da objetiva e gabarito oficial",
+      "dataInicio": "2027-02-11",
+      "dataFim": "2027-02-11",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev22",
+      "titulo": "Local e horário da prova prática, e convocados (não se aplica aos meus cargos)",
+      "dataInicio": "2027-02-12",
+      "dataFim": "2027-02-12",
+      "relevantePara": [],
+      "concluido": false
+    },
+    {
+      "id": "ev23",
+      "titulo": "Prova Prática (não se aplica aos meus cargos)",
+      "dataInicio": "2027-02-21",
+      "dataFim": "2027-02-21",
+      "relevantePara": [],
+      "concluido": false
+    },
+    {
+      "id": "ev24",
+      "titulo": "Resultado preliminar da prova prática e da prova de títulos",
+      "dataInicio": "2027-02-22",
+      "dataFim": "2027-02-22",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev25",
+      "titulo": "Recursos contra o resultado da prática e dos títulos",
+      "dataInicio": "2027-02-23",
+      "dataFim": "2027-02-24",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev26",
+      "titulo": "Respostas aos recursos, resultado da prática e dos títulos",
+      "dataInicio": "2027-03-01",
+      "dataFim": "2027-03-01",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev27",
+      "titulo": "Convocados para a Avaliação Biopsicossocial, e resultado preliminar do concurso",
+      "dataInicio": "2027-03-02",
+      "dataFim": "2027-03-02",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev28",
+      "titulo": "Recursos contra o resultado preliminar do concurso",
+      "dataInicio": "2027-03-03",
+      "dataFim": "2027-03-04",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev29",
+      "titulo": "Avaliação Biopsicossocial",
+      "dataInicio": "2027-03-06",
+      "dataFim": "2027-03-09",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev30",
+      "titulo": "Resultado preliminar da Avaliação Biopsicossocial",
+      "dataInicio": "2027-03-10",
+      "dataFim": "2027-03-10",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev31",
+      "titulo": "Recursos contra esse resultado",
+      "dataInicio": "2027-03-11",
+      "dataFim": "2027-03-12",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev32",
+      "titulo": "Resultado da Avaliação Biopsicossocial e respostas aos recursos do resultado preliminar",
+      "dataInicio": "2027-03-17",
+      "dataFim": "2027-03-17",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false
+    },
+    {
+      "id": "ev33",
+      "titulo": "Resultado final do concurso",
+      "dataInicio": "2027-03-18",
+      "dataFim": "2027-03-18",
+      "relevantePara": [
+        "AA",
+        "TI"
+      ],
+      "concluido": false,
+      "destaque": true
+    }
+  ]
+}

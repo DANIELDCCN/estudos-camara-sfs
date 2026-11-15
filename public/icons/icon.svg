@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Estudos Câmara SFS</title>
+  <rect width="512" height="512" rx="96" fill="#0b3d91"/>
+  <rect x="136" y="88" width="240" height="300" rx="24" fill="#ffffff"/>
+  <path d="M190 236 l44 44 l92 -100" fill="none" stroke="#0b3d91" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="462" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="76" fill="#ffffff">SFS</text>
+</svg>

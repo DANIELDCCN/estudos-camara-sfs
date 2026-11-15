@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudos Câmara SFS</title>
+  <meta name="description" content="Sistema pessoal de estudos para o Concurso da Câmara Municipal de São Francisco do Sul/SC (Edital nº 001/2026).">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <script>
+    // Aplica tema e fonte antes de desenhar a página (cópia guardada no localStorage).
+    try {
+      var a = JSON.parse(localStorage.getItem('ecsfs-aparencia') || '{}');
+      if (a.tema && a.tema !== 'auto') document.documentElement.dataset.tema = a.tema;
+      if (a.escalaFonte) document.documentElement.style.setProperty('--escala', a.escalaFonte);
+      if (a.espacamento) document.documentElement.classList.add('espacamento-amplo');
+    } catch (e) {}
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <p class="marca" id="nome-app">Estudos Câmara SFS</p>
+    <div class="ferramentas">
+      <div role="group" aria-label="Tamanho da fonte" class="grupo-fonte">
+        <button type="button" class="botao" id="fonte-menos"><span aria-hidden="true">A−</span><span class="sr-only">Diminuir fonte</span></button>
+        <button type="button" class="botao" id="fonte-mais"><span aria-hidden="true">A+</span><span class="sr-only">Aumentar fonte</span></button>
+      </div>
+      <button type="button" class="botao" id="abrir-ajuda" aria-keyshortcuts="?">Ajuda <span aria-hidden="true">(?)</span></button>
+    </div>
+  </header>
+
+  <div id="aviso-atualizacao" class="aviso" hidden>
+    <p>Nova versão disponível. Seus dados não serão apagados.</p>
+    <button type="button" class="botao botao-primario" id="recarregar">Recarregar</button>
+  </div>
+
+  <nav aria-label="Menu principal">
+    <ul id="menu" class="menu">
+      <li><a href="#/painel">Painel</a></li>
+      <li><a href="#/edital">Edital</a></li>
+      <li><a href="#/cronograma">Cronograma</a></li>
+      <li><a href="#/revisao">Revisão</a></li>
+      <li><a href="#/resumos">Resumos</a></li>
+      <li><a href="#/config">Configurações</a></li>
+    </ul>
+  </nav>
+
+  <main id="conteudo" tabindex="-1">
+    <p>Carregando…</p>
+  </main>
+
+  <div id="anunciador" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="dlg-ajuda" class="dialogo" aria-labelledby="ajuda-titulo">
+    <h2 id="ajuda-titulo">Ajuda e atalhos de teclado</h2>
+    <p>Os atalhos de uma tecla funcionam quando o foco não está num campo de texto. Você pode desligá-los em Configurações.</p>
+    <table class="tabela">
+      <caption class="sr-only">Atalhos de teclado</caption>
+      <thead><tr><th scope="col">Tecla</th><th scope="col">O que faz</th></tr></thead>
+      <tbody id="lista-atalhos"></tbody>
+    </table>
+    <p>No leitor de tela (Orca ou NVDA), os atalhos de uma tecla só funcionam no modo de foco. No modo de navegação, use os títulos (tecla H) para andar entre tópicos.</p>
+    <div class="linha-botoes"><button type="button" class="botao botao-primario" id="fechar-ajuda">Fechar</button></div>
+  </dialog>
+
+  <noscript><p>Este app precisa de JavaScript ligado.</p></noscript>
+</body>
+</html>

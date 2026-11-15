@@ -1,0 +1,20 @@
+{
+  "name": "Estudos Câmara SFS",
+  "short_name": "Estudos SFS",
+  "description": "Sistema pessoal de estudos para o Concurso da Câmara Municipal de São Francisco do Sul/SC (Edital nº 001/2026).",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./#/painel",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#0b3d91",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

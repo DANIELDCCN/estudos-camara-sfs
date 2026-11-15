@@ -1,0 +1,31 @@
+{
+  "name": "estudos-camara-sfs",
+  "version": "0.1.0",
+  "description": "Sistema de estudos (PWA offline e acessível) para o Concurso da Câmara Municipal de São Francisco do Sul/SC – Edital 001/2026",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "local": "vite build && vite preview",
+    "test": "vitest run",
+    "test:a11y": "playwright test",
+    "test:tudo": "vitest run && playwright test",
+    "icones": "node ferramentas/gerar-icones.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/atkinson-hyperlegible": "^5.3.0",
+    "dexie": "^4.4.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "vite": "^6.4.6",
+    "vitest": "^3.2.7"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}
