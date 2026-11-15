@@ -6,6 +6,7 @@ import { criarCalculadora } from '../logica/progresso.js';
 import { hojeISO } from '../logica/datas.js';
 import { agendar, ehNovo } from '../logica/srs.js';
 import { novoIdRegistro } from '../logica/ids.js';
+import { gerarPlano, blocosMantidos } from '../logica/cronograma.js';
 
 export const estado = {
   config: { ...CONFIG_PADRAO },
@@ -18,6 +19,7 @@ export const estado = {
   resumos: [],
   cartoes: [],
   logs: [],
+  blocos: [],
 };
 
 const ouvintes = new Set();
@@ -26,7 +28,7 @@ export function aoMudar(fn) { ouvintes.add(fn); return () => ouvintes.delete(fn)
 function avisar(o) { for (const fn of ouvintes) fn(o); }
 
 export async function carregar() {
-  const [config, concurso, cargos, disciplinas, topicos, eventos, progresso, resumos, cartoes, logs] = await Promise.all([
+  const [config, concurso, cargos, disciplinas, topicos, eventos, progresso, resumos, cartoes, logs, blocos] = await Promise.all([
     db.configuracao.get('principal'),
     db.concurso.toArray(),
     db.cargo.toArray(),
@@ -37,6 +39,7 @@ export async function carregar() {
     db.resumo.toArray(),
     db.flashcard.toArray(),
     db.revisaoLog.toArray(),
+    db.cronogramaBloco.toArray(),
   ]);
   estado.config = { ...CONFIG_PADRAO, ...config, pesosStatus: { ...CONFIG_PADRAO.pesosStatus, ...config?.pesosStatus } };
   estado.concurso = concurso[0] ?? null;
@@ -48,7 +51,10 @@ export async function carregar() {
   estado.resumos = resumos;
   estado.cartoes = cartoes;
   estado.logs = logs;
+  estado.blocos = blocos.sort(ordenarBlocos);
 }
+
+const ordenarBlocos = (a, b) => a.data.localeCompare(b.data) || a.ordem - b.ordem;
 
 /** Progresso de um tópico (cria um registro vazio se ainda não houver). */
 export function progressoDe(topicoId) {
@@ -62,8 +68,10 @@ export async function salvarProgresso(topicoId, mudancas) {
   const anterior = progressoDe(topicoId);
   const novo = carimbar({ ...anterior, ...mudancas });
   // Ao mudar o status para algo diferente de "Não iniciado", registra a data do estudo.
-  if (mudancas.status && mudancas.status !== anterior.status && mudancas.status !== 'nao-iniciado' && !('ultimoEstudo' in mudancas)) {
-    novo.ultimoEstudo = hojeISO();
+  if (mudancas.status && mudancas.status !== anterior.status) {
+    // Usado pelo cronograma: blocos feitos antes desta data já estão refletidos no status.
+    novo.statusAlteradoEm = novo.atualizadoEm;
+    if (mudancas.status !== 'nao-iniciado' && !('ultimoEstudo' in mudancas)) novo.ultimoEstudo = hojeISO();
   }
   await db.progresso.put(novo);
   estado.progresso.set(topicoId, novo);
@@ -184,4 +192,52 @@ export async function avaliarCartao(id, nota, agora = new Date()) {
   estado.logs.push(log);
   avisar({ tipo: 'revisao', id });
   return { cartao, log };
+}
+
+// ---------- Cronograma ----------
+export function blocosDoDia(data) {
+  return estado.blocos.filter((b) => b.data === data);
+}
+
+/** Data da prova usada pelo plano (configurável; padrão = data do concurso). */
+export function dataProvaDoPlano() {
+  return estado.config.dataProvaPlano || estado.concurso?.dataProva || '2027-01-24';
+}
+
+/** Atualiza um bloco (situação, minutos reais). */
+export async function salvarBloco(id, mudancas) {
+  const atual = estado.blocos.find((b) => b.id === id);
+  const novo = carimbar({ ...atual, ...mudancas });
+  await db.cronogramaBloco.put(novo);
+  Object.assign(atual, novo);
+  avisar({ tipo: 'bloco', id });
+  return atual;
+}
+
+/**
+ * Gera (ou refaz) o plano a partir de hoje, ou da data de início configurada se for depois.
+ * Mantém os blocos de dias anteriores e os de hoje já marcados. Devolve { avisos, resumo }.
+ */
+export async function replanejar(agora = new Date()) {
+  const c = estado.config;
+  const hoje = hojeISO(agora);
+  const inicio = c.dataInicioPlano && c.dataInicioPlano > hoje ? c.dataInicioPlano : hoje;
+  const mantidos = blocosMantidos(estado.blocos, hoje);
+  const plano = gerarPlano({
+    inicio, dataProva: dataProvaDoPlano(), horas: c.horasPorDiaSemana, bloqueados: c.diasBloqueados,
+    duracao: c.duracaoBloco, percRevisao: c.percRevisao, diasRetaFinal: c.diasRetaFinal, blocosPorTopico: c.blocosPorTopico,
+    topicos: estado.topicos, disciplinas: estado.disciplinas, progresso: estado.progresso, pesosStatus: c.pesosStatus,
+    cargos: cargosDaVisao(), blocosExistentes: mantidos,
+  });
+  const novos = plano.blocos.map((b) => carimbar({ id: novoIdRegistro('bloco'), ...b }, agora));
+  const idsMantidos = new Set(mantidos.map((b) => b.id));
+  const remover = estado.blocos.filter((b) => !idsMantidos.has(b.id)).map((b) => b.id);
+  await db.transaction('rw', db.cronogramaBloco, async () => {
+    await db.cronogramaBloco.bulkDelete(remover);
+    await db.cronogramaBloco.bulkPut(novos);
+  });
+  estado.blocos = [...mantidos, ...novos].sort(ordenarBlocos);
+  await salvarConfig({ ultimoPlano: { geradoEm: agora.toISOString(), avisos: plano.avisos, resumo: plano.resumo, cargos: cargosDaVisao() } });
+  avisar({ tipo: 'plano' });
+  return plano;
 }

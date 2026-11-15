@@ -15,7 +15,7 @@ import * as edital from './ui/telas/edital.js';
 import * as config from './ui/telas/config.js';
 import * as revisao from './ui/telas/revisao.js';
 import * as resumos from './ui/telas/resumos.js';
-import { cronograma } from './ui/telas/em-breve.js';
+import * as cronograma from './ui/telas/cronograma.js';
 
 // Rotas: o endereço fica como .../#/edital ou .../#/resumos/topico/POR-16
 // (funciona em qualquer hospedagem estática). O que vem depois da rota é o parâmetro da tela.

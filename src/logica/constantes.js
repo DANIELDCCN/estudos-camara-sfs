@@ -45,6 +45,11 @@ export const CONFIG_PADRAO = {
   percRevisao: 20,
   diasRetaFinal: 7,
   limiteNovosCartoes: 20,
+  blocosPorTopico: 3, // blocos de estudo para levar um tópico de Não iniciado a Dominado
+  dataInicioPlano: null, // null = hoje
+  dataProvaPlano: null, // null = data da prova do concurso
+  replanejarAuto: true, // replaneja sozinho, uma vez por dia, se houver blocos atrasados
+  ultimoPlano: null, // { geradoEm, avisos, resumo }
   ultimoBackup: null,
   versaoSeed: 0,
 };

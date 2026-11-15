@@ -69,3 +69,18 @@ Leitores: **Orca** (Linux, com Firefox ou Chromium), **NVDA** (Windows) ou **Tal
 - [ ] A tabela de previsão de 7 dias é lida com cabeçalhos de linha e coluna.
 - [ ] A importação em lote anuncia quantos cartões entraram e lista os erros com o número da linha.
 - [ ] No celular (TalkBack), os quatro botões de avaliação são grandes e fáceis de tocar.
+
+## Etapa 3 – Cronograma
+
+- [ ] Na primeira vez, Cronograma abre os Ajustes com "Primeiro plano". Cada campo de horas é lido com o nome do dia.
+- [ ] Um valor inválido (ex.: 20 horas) mostra "Erro: …", leva o foco ao campo e o marca como inválido.
+- [ ] "Adicionar folga" e "Remover folga de 25/12/2026" anunciam o resultado.
+- [ ] Depois de gerar, a mensagem "Cronograma replanejado…" é lida, e os "Avisos do plano" aparecem como região com título.
+- [ ] O submenu "Visões do cronograma" indica a visão atual ("página atual").
+- [ ] Hoje: o título do dia é lido; cada bloco é um item de lista numerado, com tipo, minutos e descrição.
+- [ ] Os campos "Situação do bloco 2 de 16/11/2026" e "Minutos reais do bloco 2 de 16/11/2026" dizem de qual bloco são.
+- [ ] Marcar um bloco anuncia "Bloco 2 marcado como Feito" e lembra de atualizar o status do tópico. O total "Registrado" se atualiza.
+- [ ] A situação aparece em texto e com ícone de forma diferente (vazio, meio, cheio, cortado), não só por cor.
+- [ ] Semana: um título de nível 3 por dia (tecla H no leitor de tela).
+- [ ] Resumo do plano: a tabela de disciplinas é lida com cabeçalhos de linha e coluna.
+- [ ] "Replanejar a partir de hoje" anuncia o resultado sem perder o lugar na página.

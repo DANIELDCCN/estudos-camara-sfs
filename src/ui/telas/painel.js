@@ -5,6 +5,10 @@ import { estado, calculadora, cargosDaVisao } from '../../dados/repositorio.js';
 import { instante, textoContagem, formatarData, diaDaSemana, formatarHora, proximosEventos, periodo } from '../../logica/datas.js';
 import { NOME_CARGO_COMPLETO } from '../../logica/constantes.js';
 import { filaAtual } from './revisao.js';
+import { descreverBloco, iconeSituacao } from './cronograma.js';
+import { blocosDoDia } from '../../dados/repositorio.js';
+import { ROTULO_SITUACAO, blocosAtrasados } from '../../logica/cronograma.js';
+import { hojeISO } from '../../logica/datas.js';
 
 export const titulo = 'Painel';
 
@@ -48,8 +52,7 @@ export function render() {
     secao('Próximos prazos', listaEventos),
     secao('Progresso', ...barras, h('p', {}, h('a', { href: '#/edital' }, 'Abrir o checklist do edital'))),
     secao('Flashcards de hoje', ...blocoCartoes()),
-    secao('Estudo de hoje',
-      h('p', {}, 'As tarefas do dia aparecem aqui quando o cronograma automático estiver pronto (Etapa 3).')),
+    secao('Estudo de hoje', ...blocoHoje()),
   );
 
   // Atualiza a contagem a cada minuto, sem anunciar (seria barulho para o leitor de tela).
@@ -73,5 +76,26 @@ function blocoCartoes() {
   return [
     h('p', { class: 'destaque-numero' }, `${total} para revisar: ${f.vencidos.length} ${f.vencidos.length === 1 ? 'vencido' : 'vencidos'} e ${f.novos.length} ${f.novos.length === 1 ? 'novo' : 'novos'}.`),
     h('p', {}, h('a', { href: '#/revisao/sessao', class: 'botao botao-primario' }, 'Começar revisão')),
+  ];
+}
+
+/** Tarefas do dia, vindas do cronograma. */
+function blocoHoje() {
+  if (!estado.blocos.length) {
+    return [h('p', {}, 'Ainda não há cronograma.'), h('p', {}, h('a', { href: '#/cronograma/ajustes', class: 'botao botao-primario' }, 'Criar o cronograma'))];
+  }
+  const hoje = hojeISO();
+  const blocos = blocosDoDia(hoje);
+  const feitos = blocos.filter((b) => b.situacao === 'feito').length;
+  const atrasados = blocosAtrasados(estado.blocos, hoje).length;
+  return [
+    blocos.length
+      ? h('p', {}, `${blocos.length} ${blocos.length === 1 ? 'bloco' : 'blocos'} hoje, ${feitos} ${feitos === 1 ? 'feito' : 'feitos'}.`)
+      : h('p', {}, 'Nenhum bloco planejado para hoje.'),
+    blocos.length ? h('ol', { class: 'lista-simples lista-hoje' }, blocos.map((b) => h('li', {},
+      h('span', { class: 'selo' }, iconeSituacao(b.situacao), h('span', {}, `${ROTULO_SITUACAO[b.situacao]}:`)), ' ',
+      `${descreverBloco(b)} (${b.minutosPlanejados} min).`))) : null,
+    atrasados ? h('p', {}, h('strong', {}, 'Atrasos: '), `${atrasados} ${atrasados === 1 ? 'bloco' : 'blocos'} de dias anteriores sem marcação.`) : null,
+    h('p', {}, h('a', { href: '#/cronograma', class: 'botao botao-link' }, 'Abrir o cronograma de hoje')),
   ];
 }

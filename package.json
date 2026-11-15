@@ -1,6 +1,6 @@
 {
   "name": "estudos-camara-sfs",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Sistema de estudos (PWA offline e acessível) para o Concurso da Câmara Municipal de São Francisco do Sul/SC – Edital 001/2026",
   "scripts": {
     "dev": "vite",

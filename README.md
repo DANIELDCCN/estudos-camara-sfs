@@ -7,8 +7,9 @@ Sistema pessoal de estudos para o **Concurso Público da Câmara Municipal de S�
 Etapas prontas:
 - **Etapa 1 (MVP):** checklist do edital, progresso, painel com contagem regressiva, backup e toda a base de acessibilidade.
 - **Etapa 2:** resumos em Markdown ligados aos tópicos, com busca e exportação; flashcards com FSRS, fila do dia e revisão só pelo teclado.
+- **Etapa 3:** cronograma automático até a véspera da prova, com prioridade por peso, progresso e confiança, reta final, aviso de horas insuficientes e replanejamento.
 
-O cronograma automático chega na Etapa 3.
+A Etapa 4 traz estatísticas semanais, lembrete de backup, status da inscrição e exportações extras.
 
 ---
 
@@ -20,12 +21,13 @@ O cronograma automático chega na Etapa 3.
 4. [Backup e sincronização](#4-backup-e-sincronização)
 5. [Resumos](#5-resumos)
 6. [Flashcards](#6-flashcards)
-7. [Atalhos de teclado](#7-atalhos-de-teclado)
-8. [Como o progresso é calculado](#8-como-o-progresso-é-calculado)
-9. [Testes](#9-testes)
-10. [Estrutura do projeto](#10-estrutura-do-projeto)
-11. [Quando sair uma retificação do edital](#11-quando-sair-uma-retificação-do-edital)
-12. [Licenças](#12-licenças)
+7. [Cronograma](#7-cronograma)
+8. [Atalhos de teclado](#8-atalhos-de-teclado)
+9. [Como o progresso é calculado](#9-como-o-progresso-é-calculado)
+10. [Testes](#10-testes)
+11. [Estrutura do projeto](#11-estrutura-do-projeto)
+12. [Quando sair uma retificação do edital](#12-quando-sair-uma-retificação-do-edital)
+13. [Licenças](#13-licenças)
 
 ---
 
@@ -90,9 +92,11 @@ cd ~/estudos-camara-sfs
 npm install
 npm test
 git add -A
-git commit -m "Etapa 2"
+git commit -m "Etapa 3"
 git push
 ```
+
+Se um arquivo deixou de existir numa etapa nova, apague-o da sua pasta antes do `git add -A`. Na Etapa 3, o arquivo removido foi `src/ui/telas/em-breve.js`. Mesmo que fique na pasta, ele não atrapalha, porque nada mais o usa.
 
 **Alternativa sem GitHub (Codeberg Pages):** crie um repositório chamado `pages` na sua conta do codeberg.org, rode `npm run build` e envie **o conteúdo da pasta `dist/`** para esse repositório. O endereço fica `https://SEU-USUARIO.codeberg.page/`.
 
@@ -183,7 +187,46 @@ Um cartão que deve voltar ainda hoje (os primeiros passos de um cartão novo, o
 
 ---
 
-## 7. Atalhos de teclado
+## 7. Cronograma
+
+**Primeiro plano:** abra **Cronograma**. Na primeira vez aparecem os **Ajustes**: preencha as horas de cada dia da semana e use **Gerar cronograma**. O plano vai de hoje (ou da data de início escolhida) até a **véspera da prova**.
+
+**Ajustes** (Cronograma → Ajustes):
+- **Horas por dia da semana:** de 0 a 16, em meias horas.
+- **Cargo em foco:** os dois cargos, só Assistente ou só Analista. É a mesma escolha da tela Edital.
+- **Data de início:** em branco significa hoje.
+- **Data da prova:** vem do edital (24/01/2027) e pode ser mudada se sair retificação.
+- **Duração do bloco:** padrão de 50 minutos.
+- **Tempo para flashcards:** padrão de 20% de cada dia, num bloco "Revisão de flashcards".
+- **Reta final:** padrão de 7 dias antes da prova, só com revisão e simulados.
+- **Blocos por tópico:** padrão de 3 (o necessário para levar um tópico de Não iniciado a Dominado).
+- **Dias de folga:** escolha a data e use **Adicionar folga**. Esses dias ficam sem blocos.
+- **Replanejar sozinho:** ligado por padrão (veja abaixo).
+
+**Como o plano é montado:**
+1. Cada dia vira um bloco de flashcards mais blocos de estudo. Se sobra meio bloco ou mais, ele vira um bloco menor; se sobra menos, vai para os flashcards.
+2. **Prioridade** de cada tópico = peso na prova × (1 − progresso) × fator de confiança baixa. Tópicos compartilhados somam o peso nos dois cargos. Fator: 1 + (5 − confiança) × 0,25; sem avaliação, 1,5.
+3. **Blocos necessários** de um tópico = blocos por tópico × (1 − progresso), arredondado para cima, menos os blocos já feitos depois da última mudança de status (mínimo 1). Tópicos Dominados saem do plano.
+4. Os blocos de estudo vão primeiro para os tópicos de maior prioridade, alternando os assuntos. Dentro do dia, nunca há mais de 2 blocos seguidos da mesma disciplina, a não ser que só reste uma.
+5. **Reta final:** os dias alternam entre simulado (até 4 horas, a duração da prova) e revisão geral. A véspera é sempre de revisão geral.
+6. **Tempo insuficiente:** o app avisa quantos blocos faltam, quantos tópicos ficaram sem todos os blocos e quantas horas por semana seriam necessárias. Se sobram horas, os blocos extras viram revisão geral.
+
+**No dia a dia:**
+- **Hoje** mostra os blocos do dia, em ordem. Cada um tem a **Situação** (Pendente, Feito, Parcialmente feito, Pulado) e os **Minutos reais**. "Feito" preenche os minutos planejados, e "Pulado" registra 0. Blocos de estudo têm links para o resumo e para o tópico no Edital.
+- **Semana** lista de segunda a domingo, com um título por dia. Os links "Semana anterior" e "Próxima semana" trocam a semana.
+- **Resumo do plano** mostra os números do plano, uma tabela de blocos por disciplina e os tópicos que ficaram sem todos os blocos.
+- O **Painel** mostra os blocos de hoje e os atrasados.
+
+**Replanejar:**
+- O botão **Replanejar a partir de hoje** refaz o plano a partir de hoje. Ele mantém os blocos de dias anteriores (histórico) e os de hoje já marcados, e redistribui os tópicos que ficaram para trás.
+- Com **Replanejar sozinho** ligado, quando há blocos atrasados (dias anteriores ainda Pendentes), o app replaneja uma vez por dia ao abrir o Cronograma e avisa.
+- Salvar os Ajustes também replaneja.
+
+Depois de estudar um tópico, atualize o **status** dele no Edital: é o status que faz o plano diminuir os blocos daquele tópico.
+
+---
+
+## 8. Atalhos de teclado
 
 Abra a lista a qualquer momento com a tecla **?** ou com o botão **Ajuda**.
 
@@ -202,7 +245,7 @@ Os atalhos de uma tecla podem ser desligados em **Configurações** (útil se at
 
 ---
 
-## 8. Como o progresso é calculado
+## 9. Como o progresso é calculado
 
 - **Um só catálogo:** 84 tópicos. Cada tópico existe uma vez e tem a lista de cargos a que pertence. A visão "Assistente Administrativo" mostra 52 tópicos, e a visão "Analista de TI" mostra 68. Marcar um tópico compartilhado conta nos dois cargos.
 - **% simples:** tópicos **concluídos** ÷ total. Conta como concluído o tópico **Revisado** ou **Dominado**. No geral, cada tópico conta uma vez.
@@ -210,16 +253,16 @@ Os atalhos de uma tecla podem ser desligados em **Configurações** (útil se at
 - **Ponderado geral (os dois cargos):** um tópico compartilhado soma o peso que tem em cada cargo. Na prática, o resultado é a **média dos dois cargos**.
 - **Exemplo conferido nos testes:** só POR-16 (Crase) como Revisado. Assistente: 0,075 × 0,9 = 0,675%. Analista: 0,0556 × 0,9 = 0,5%. Geral: 0,5875%.
 
-**Fator de confiança (usado no cronograma da Etapa 3):** fator = 1 + (5 − confiança) × 0,25. Confiança 5 dá 1,0; confiança 1 dá 2,0; um tópico sem avaliação usa 1,5.
+**Fator de confiança (usado no cronograma):** fator = 1 + (5 − confiança) × 0,25. Confiança 5 dá 1,0; confiança 1 dá 2,0; um tópico sem avaliação usa 1,5.
 
 ---
 
-## 9. Testes
+## 10. Testes
 
 ```bash
-npm test                      # 37 testes unitários
+npm test                      # 51 testes unitários
 npx playwright install chromium   # só na primeira vez (baixa o navegador de teste)
-npm run test:a11y             # 23 testes no navegador
+npm run test:a11y             # 34 testes no navegador
 ```
 
 Se você já tem o Chromium ou o Chrome instalado e não quer baixar outro, aponte para ele:
@@ -238,13 +281,14 @@ Os testes no navegador verificam:
 - funcionamento offline;
 - backup: exportar → apagar → importar restaura tudo (inclusive resumos, cartões e histórico), e mesclar não duplica;
 - resumo: salvamento automático, ligação com o tópico, busca, destaque acessível e Markdown seguro;
-- flashcards: criar no tópico, revisar só pelo teclado, próxima revisão calculada, limite de novos e importação em lote.
+- flashcards: criar no tópico, revisar só pelo teclado, próxima revisão calculada, limite de novos e importação em lote;
+- cronograma: blocos até 23/01/2027, última semana só de revisão e simulados, 3 blocos pulados + Replanejar redistribui e avisa, folgas, replanejamento automático.
 
 A verificação manual com leitor de tela está em [`docs/checklist-acessibilidade.md`](docs/checklist-acessibilidade.md).
 
 ---
 
-## 10. Estrutura do projeto
+## 11. Estrutura do projeto
 
 ```
 index.html                  página única (cabeçalho, menu, área principal, ajuda)
@@ -261,6 +305,7 @@ src/
   logica/                   funções puras, com testes
     srs.js                  FSRS: agendar, previsões, textos de intervalo
     fila.js                 fila do dia, estatísticas, previsão de 7 dias
+    cronograma.js           prioridade, blocos necessários, plano, replanejamento
     texto.js                busca sem acento, edição de Markdown, CSV de cartões
     constantes.js           status, pesos, configuração padrão
     progresso.js            % simples e ponderado
@@ -274,7 +319,7 @@ src/
     markdown.js             Markdown seguro (marked + DOMPurify), destaque acessível
     cartao-dialogo.js       janela de criar e editar cartão
     seletores.js            listas de tópicos e disciplinas
-    telas/                  painel, edital, resumos, revisao, config, em-breve
+    telas/                  painel, edital, cronograma, resumos, revisao, config
   estilos/base.css          temas, foco, layout
 tests/unit/                 testes unitários (Vitest)
 tests/a11y/                 testes no navegador (Playwright + axe-core)
@@ -284,7 +329,7 @@ ferramentas/gerar-icones.mjs  gera os PNG a partir de public/icons/icon.svg
 
 ---
 
-## 11. Quando sair uma retificação do edital
+## 12. Quando sair uma retificação do edital
 
 Os dados do edital estão em `src/dados/seed.json`. Para corrigir:
 
@@ -298,7 +343,7 @@ A edição de tópicos e datas pela própria tela, sem mexer no arquivo, está p
 
 ---
 
-## 12. Licenças
+## 13. Licenças
 
 - Código do app: MIT (arquivo `LICENSE`).
 - [Dexie.js](https://dexie.org): Apache 2.0.

@@ -350,3 +350,12 @@ textarea.editor-markdown { min-height: 14rem; line-height: 1.6; }
 .nota-tecla { display: inline-block; min-width: 1.6em; text-align: center; border: 2px solid currentColor; border-radius: 0.3rem; }
 .nota-intervalo { font-weight: 400; }
 .erros-importacao { color: var(--texto); }
+
+/* ---------- Etapa 3: cronograma ---------- */
+.submenu { border-block: none; padding-block: 0; margin-block: 0.5rem 1rem; }
+.bloco-descricao { font-weight: 700; font-size: 1.1rem; margin-block: 0.25rem; }
+.campo-curto { flex: 0 1 10rem; }
+.dia-semana { margin-block: 1.25rem; border-block-start: 2px solid var(--borda); }
+.aviso-plano { border-width: 3px; border-color: var(--foco); }
+.mensagem-plano { font-weight: 700; }
+.lista-hoje .selo { margin: 0; vertical-align: middle; }
